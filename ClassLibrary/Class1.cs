@@ -30,8 +30,31 @@ namespace CourseWork.ClassLibrary
         }
 
         // Свойства
+        //private string? info;
+        //public string? Info { get => info; set { info = value; } }
+
+        // Проверка символа и его замена
         private string? info;
-        public string? Info { get => info; set { info = value; } }
+        public string? Info
+        {
+            get => info;
+            set
+            {
+                if (!string.IsNullOrEmpty(value))
+                {
+                    // Проверка, является ли первый символ строчным
+                    if (char.IsLower(value[0]))
+                    {
+                        // Заменяем первый символ на прописной
+                        info = char.ToUpper(value[0]) + value.Substring(1);
+                    }
+                    else
+                    {
+                        info = value;
+                    }
+                }
+            }
+        }
 
         private string? num;
         public string? Num 
