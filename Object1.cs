@@ -57,9 +57,6 @@ namespace CourseWork
             HomeProject project = new HomeProject();
             project.ProjectDate = dateTimePicker1.Value.AddDays(7);
 
-            // Для сокращенной записи
-            //HomeProject project3 = new HomeProject();
-
             this.home.door = textBox1.Text;
             this.home.window = textBox2.Text;
             this.home.roof = textBox3.Text;

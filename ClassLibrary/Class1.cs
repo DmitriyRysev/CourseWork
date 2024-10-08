@@ -29,6 +29,7 @@ namespace CourseWork.ClassLibrary
             }
         }
 
+        // Свойства
         private string? info;
         public string? Info { get => info; set { info = value; } }
 
@@ -42,27 +43,7 @@ namespace CourseWork.ClassLibrary
 }
 
 
-
-// Для 3 лабы: стандартные свойства в классе Home для полей класса
-//private string? _door;
-//public string? Door
-//{
-//    get => _door; private set { _door = value; } // Ограничиваем доступ к set, сохраняя возможность чтения
-//}
-
-//private string? _window;
-//public string? Window
-//{
-//    get => _window; set { _window = value; }
-//}
-
-//private string? _roof;
-//public string? Roof
-//{
-//    get => _roof; set { _roof = value; }
-//}
-
-
+// Перегрузки конструкторов
 
 //public string sofa;
 //public string bed;

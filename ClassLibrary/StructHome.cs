@@ -8,7 +8,7 @@ namespace ClassLibrary
         public int Projnum { get; set; }
         public DateTime ProjectDate { get; set; }
 
-        // Явный конструктор с параметром
+        // Явный конструктор с параметрами
         public HomeProject(int ProjNum, DateTime projectDate)
         {
             Projnum = 0;
