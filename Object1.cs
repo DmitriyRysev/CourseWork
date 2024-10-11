@@ -1,5 +1,5 @@
-using ClassLibrary;
 using System;
+using ClassLibrary;
 using CourseWork.ClassLibrary;
 #pragma warning disable CA1416 // Проверка совместимости платформы
 
@@ -16,50 +16,20 @@ namespace CourseWork
 
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void read_button(object sender, EventArgs e)
         {
-            // Используем конструктор по умолчанию (он уже есть из-за версии C#, просто не видно)
-            HomeProject project = new HomeProject();
-            project.ProjectDate = dateTimePicker1.Value.AddDays(7);
+            // Генерируем случайный номер проекта
+            Random random = new Random();
+            int ProjNum = random.Next(1, 101);
 
+            // Используем конструктор 
+            HomeProject project = new HomeProject(ProjNum, dateTimePicker1.Value.AddDays(7));
+            
             this.home.door = textBox1.Text;
             this.home.window = textBox2.Text;
             this.home.roof = textBox3.Text;
+
+            // Использование свойства
             this.home.Info = textBox4.Text;
             this.home.Num = textBox5.Text;
 
@@ -86,10 +56,12 @@ namespace CourseWork
                !string.IsNullOrWhiteSpace(this.home.window) &&
                !string.IsNullOrWhiteSpace(this.home.roof))
             {
-                // Если все поля заполнены, выводим дату
+                // Вывод информации в интерфейс 
                 DateTime selectedDate = dateTimePicker1.Value;
                 richTextBox1.Text += String.Format("Заявка на выполнение проекта от {0:dd/MM/yyyy} создана.\n", selectedDate);
                 richTextBox1.Text += project.ProjectSummary;
+
+                // Использование свойств
                 richTextBox1.Text += String.Format("Тип проекта:'{0}'\nВаш номер телефона: {1}\n", home.Info, home.Num);
             }
             else
@@ -131,10 +103,50 @@ namespace CourseWork
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
-            // Выбор даты
+            
         }
 
         private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox5_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
         {
 
         }
@@ -145,11 +157,6 @@ namespace CourseWork
         }
 
         private void label8_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox5_TextChanged(object sender, EventArgs e)
         {
 
         }

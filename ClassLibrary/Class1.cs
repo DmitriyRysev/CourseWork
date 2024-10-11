@@ -5,8 +5,6 @@ namespace CourseWork.ClassLibrary
 {
     public class Home
     {
-        //public Home(string? info1, string? num1) { info = info1; num = num1; }
-
         public string? window;
         public string? door;
         public string? roof;
@@ -28,10 +26,6 @@ namespace CourseWork.ClassLibrary
                 Home.BackColor = Color.AliceBlue;
             }
         }
-
-        // Свойства
-        //private string? info;
-        //public string? Info { get => info; set { info = value; } }
 
         // Проверка символа и его замена
         private string? info;
@@ -64,31 +58,3 @@ namespace CourseWork.ClassLibrary
         }
     }
 }
-
-
-// Перегрузки конструкторов
-
-//public string sofa;
-//public string bed;
-//public string table;
-
-// Конструкторы класса
-//public Home() { }
-
-//public Home(string sofa)
-//{
-//    this.sofa = sofa;
-//}
-
-//public Home(string sofa, string bed)
-//{
-//    this.sofa = sofa;
-//    this.bed = bed;
-//}
-
-//public Home(string sofa, string bed, string table)
-//{
-//    this.sofa = sofa;
-//    this.bed = bed;
-//    this.table = table;
-//}

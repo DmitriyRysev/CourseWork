@@ -4,14 +4,14 @@ namespace ClassLibrary
 {
     public struct HomeProject
     {
-        // Автоматические свойства
+        // Автоматические свойства  
         public int Projnum { get; set; }
         public DateTime ProjectDate { get; set; }
 
         // Явный конструктор с параметрами
         public HomeProject(int ProjNum, DateTime projectDate)
         {
-            Projnum = 0;
+            Projnum = ProjNum;
             ProjectDate = projectDate;
 
         }
@@ -22,7 +22,3 @@ namespace ClassLibrary
         }
     }
 }
-
-
-// Сокращенная запись
-//public string FormattedProjnum => $"\nПроект номер {Projnum}\n";
