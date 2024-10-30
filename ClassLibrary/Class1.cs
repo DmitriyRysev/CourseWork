@@ -1,13 +1,22 @@
 ﻿using System;
 using System.Drawing;
+using System.Windows.Forms;
 
-namespace CourseWork.ClassLibrary
+namespace ClassLibrary 
 {
     public class Home
     {
         public string? window;
         public string? door;
         public string? roof;
+        public string? city;
+
+        public Home() { }
+
+        public Home(string? city)
+        {
+            this.city = city;
+        }
 
         // Статический конструктор
         public static readonly Color BackColor;
@@ -51,10 +60,16 @@ namespace CourseWork.ClassLibrary
         }
 
         private string? num;
-        public string? Num 
-        { 
-            get => num; 
-            set { if (value.Length == 11) num = value; else num = "0" ; }
+        public string? Num
+        {
+            get => num;
+            set
+            {
+                if (!string.IsNullOrEmpty(value) && value.Length == 11)
+                    num = value;
+                else
+                    num = "0";
+            }
         }
     }
 }

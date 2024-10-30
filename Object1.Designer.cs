@@ -52,6 +52,14 @@ namespace CourseWork
             button2 = new Button();
             button3 = new Button();
             button4 = new Button();
+            label9 = new Label();
+            label10 = new Label();
+            listBox1 = new ListBox();
+            listBox2 = new ListBox();
+            button5 = new Button();
+            button6 = new Button();
+            richTextBox2 = new RichTextBox();
+            textBox7 = new TextBox();
             panel1.SuspendLayout();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
@@ -65,7 +73,7 @@ namespace CourseWork
             panel1.Controls.Add(label1);
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(785, 90);
+            panel1.Size = new Size(1411, 90);
             panel1.TabIndex = 0;
             // 
             // label1
@@ -74,12 +82,11 @@ namespace CourseWork
             label1.AutoSize = true;
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Courier New", 16F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(103, 28);
+            label1.Location = new Point(416, 28);
             label1.Name = "label1";
             label1.Size = new Size(623, 36);
             label1.TabIndex = 0;
             label1.Text = "Компания \"Уит\" - строим будущее!";
-            label1.Click += label2_Click;
             // 
             // groupBox1
             // 
@@ -110,7 +117,6 @@ namespace CourseWork
             textBox5.Name = "textBox5";
             textBox5.Size = new Size(264, 30);
             textBox5.TabIndex = 14;
-            textBox5.TextChanged += textBox5_TextChanged;
             // 
             // label8
             // 
@@ -122,7 +128,6 @@ namespace CourseWork
             label8.Size = new Size(174, 20);
             label8.TabIndex = 13;
             label8.Text = "Номер телефона:";
-            label8.Click += label8_Click;
             // 
             // label7
             // 
@@ -134,7 +139,6 @@ namespace CourseWork
             label7.Size = new Size(141, 20);
             label7.TabIndex = 12;
             label7.Text = "Тип проекта:";
-            label7.Click += label7_Click;
             // 
             // textBox4
             // 
@@ -142,7 +146,6 @@ namespace CourseWork
             textBox4.Name = "textBox4";
             textBox4.Size = new Size(264, 30);
             textBox4.TabIndex = 11;
-            textBox4.TextChanged += textBox4_TextChanged;
             // 
             // dateTimePicker1
             // 
@@ -163,7 +166,6 @@ namespace CourseWork
             label6.Size = new Size(229, 20);
             label6.TabIndex = 9;
             label6.Text = "Дата создания заявки";
-            label6.Click += label6_Click;
             // 
             // label5
             // 
@@ -175,7 +177,6 @@ namespace CourseWork
             label5.Size = new Size(64, 20);
             label5.TabIndex = 8;
             label5.Text = "Крыша";
-            label5.Click += label5_Click;
             // 
             // label4
             // 
@@ -188,7 +189,6 @@ namespace CourseWork
             label4.Size = new Size(53, 20);
             label4.TabIndex = 7;
             label4.Text = "Окна";
-            label4.Click += label4_Click;
             // 
             // label3
             // 
@@ -300,13 +300,104 @@ namespace CourseWork
             button4.UseVisualStyleBackColor = true;
             button4.Click += new_proj_button;
             // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Font = new Font("Courier New", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label9.ForeColor = Color.Black;
+            label9.Location = new Point(860, 105);
+            label9.Name = "label9";
+            label9.Size = new Size(214, 23);
+            label9.TabIndex = 15;
+            label9.Text = "Город проживания:";
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Font = new Font("Courier New", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label10.ForeColor = Color.Black;
+            label10.Location = new Point(881, 164);
+            label10.Name = "label10";
+            label10.Size = new Size(154, 22);
+            label10.TabIndex = 16;
+            label10.Text = "СПРАВОЧНИКИ:";
+            // 
+            // listBox1
+            // 
+            listBox1.Font = new Font("Courier New", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            listBox1.FormattingEnabled = true;
+            listBox1.ItemHeight = 23;
+            listBox1.Location = new Point(778, 189);
+            listBox1.Name = "listBox1";
+            listBox1.Size = new Size(180, 119);
+            listBox1.TabIndex = 17;
+            // 
+            // listBox2
+            // 
+            listBox2.Font = new Font("Courier New", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            listBox2.FormattingEnabled = true;
+            listBox2.ItemHeight = 23;
+            listBox2.Location = new Point(965, 189);
+            listBox2.Name = "listBox2";
+            listBox2.Size = new Size(180, 119);
+            listBox2.TabIndex = 18;
+            // 
+            // button5
+            // 
+            button5.Font = new Font("Courier New", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button5.ForeColor = Color.Black;
+            button5.Location = new Point(778, 325);
+            button5.Name = "button5";
+            button5.Size = new Size(180, 34);
+            button5.TabIndex = 19;
+            button5.Text = "Запись";
+            button5.UseVisualStyleBackColor = true;
+            button5.Click += RecordButton;
+            // 
+            // button6
+            // 
+            button6.Font = new Font("Courier New", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button6.ForeColor = Color.Black;
+            button6.Location = new Point(964, 325);
+            button6.Name = "button6";
+            button6.Size = new Size(180, 34);
+            button6.TabIndex = 20;
+            button6.Text = "Чтение";
+            button6.UseVisualStyleBackColor = true;
+            button6.Click += ReadButton;
+            // 
+            // richTextBox2
+            // 
+            richTextBox2.Font = new Font("Courier New", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            richTextBox2.Location = new Point(778, 365);
+            richTextBox2.Name = "richTextBox2";
+            richTextBox2.Size = new Size(366, 160);
+            richTextBox2.TabIndex = 21;
+            richTextBox2.Text = "";
+            // 
+            // textBox7
+            // 
+            textBox7.Font = new Font("Courier New", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            textBox7.Location = new Point(778, 131);
+            textBox7.Name = "textBox7";
+            textBox7.Size = new Size(366, 30);
+            textBox7.TabIndex = 4;
+            // 
             // Object1
             // 
             AutoScaleDimensions = new SizeF(10F, 18F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSize = true;
-            BackColor = SystemColors.Control;
-            ClientSize = new Size(785, 544);
+            BackColor = SystemColors.GradientInactiveCaption;
+            ClientSize = new Size(1157, 535);
+            Controls.Add(textBox7);
+            Controls.Add(richTextBox2);
+            Controls.Add(button6);
+            Controls.Add(button5);
+            Controls.Add(listBox2);
+            Controls.Add(listBox1);
+            Controls.Add(label10);
+            Controls.Add(label9);
             Controls.Add(button4);
             Controls.Add(button3);
             Controls.Add(button2);
@@ -352,6 +443,14 @@ namespace CourseWork
         private Label label7;
         private Label label8;
         private TextBox textBox5;
+        private Label label9;
+        private Label label10;
+        private ListBox listBox1;
+        private ListBox listBox2;
+        private Button button5;
+        private Button button6;
+        private RichTextBox richTextBox2;
+        private TextBox textBox7;
     }
 }
 

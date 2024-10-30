@@ -1,6 +1,6 @@
 using System;
 using ClassLibrary;
-using CourseWork.ClassLibrary;
+//using CourseWork.ClassLibrary;
 #pragma warning disable CA1416 // Проверка совместимости платформы
 
 namespace CourseWork
@@ -8,12 +8,19 @@ namespace CourseWork
     public partial class Object1
     {
         public Home home;
+
+        //private string foto;
         public Object1()
         {
             InitializeComponent();
-            this.home = new Home();
+            this.home = new Company();
             this.BackColor = Home.BackColor; // Установка цвета фона окна
 
+            // Инициализация ListBox1 начальниками
+            listBox1.Items.AddRange(new string[] { "Иванов", "Петров", "Сидоров", "Кузнецов" });
+
+            // Инициализация ListBox2 отделами
+            listBox2.Items.AddRange(new string[] { "Восточный", "Западный", "Южный", "Северный" });
         }
 
         private void read_button(object sender, EventArgs e)
@@ -24,7 +31,7 @@ namespace CourseWork
 
             // Используем конструктор 
             HomeProject project = new HomeProject(ProjNum, dateTimePicker1.Value.AddDays(7));
-            
+
             this.home.door = textBox1.Text;
             this.home.window = textBox2.Text;
             this.home.roof = textBox3.Text;
@@ -84,9 +91,11 @@ namespace CourseWork
         private void hash_button(object sender, EventArgs e)
         {
             // Получение хэш-кода
-            int hashCode = this.home.GetHashCode();
             richTextBox1.Text += string.Format("\nХэш-код объекта {0}, который используется " +
-                "для идентификации объекта: {1}. \n", ToString(), hashCode);
+                "для идентификации объекта: {1}. \n", ToString(), GetHashCode());
+
+            //Company company = new Company(textBox7.Text, listBox1.Text, listBox2.Text);
+            //richTextBox2.Text += company.city.GetHashCode().ToString();
         }
 
         private void new_proj_button(object sender, EventArgs e)
@@ -97,66 +106,54 @@ namespace CourseWork
             textBox3.Clear();
             textBox4.Clear();
             textBox5.Clear();
+            textBox7.Clear();
             richTextBox1.Clear();
+            richTextBox2.Clear();
+        }
 
+        private void RecordButton(object sender, EventArgs e)
+        {
+            // Создаем объект класса Company
+            Company company = new Company(listBox2.SelectedItem?.ToString(), listBox1.SelectedItem?.ToString(), textBox7.Text);
+
+            // Upcasting: преобразуем объект Company к базовому типу Home
+            Home homeAsBase = company;
+
+            // Используем базовые свойства объекта Home
+            homeAsBase.window = textBox1.Text;
+            homeAsBase.door = textBox2.Text;
+            homeAsBase.roof = textBox3.Text;
+
+            // Формируем строку для записи
+            string dataToWrite = $"Город: {homeAsBase.city}\nНачальник отдела: {company.Head}\nОтдел: {company.Department}";
+
+            // Записываем данные в файл
+            File.WriteAllText("companyData.txt", dataToWrite);
+
+            MessageBox.Show("Данные успешно записаны в файл!");
+        }
+
+        private void ReadButton(object sender, EventArgs e)
+        {
+            if (File.Exists("companyData.txt"))
+            {
+                // Читаем данные из файла и выводим в RichTextBox
+                string dataFromFile = File.ReadAllText("companyData.txt");
+                richTextBox2.Text = dataFromFile;
+            }
+
+            else
+            {
+                MessageBox.Show("Файл не найден. Сначала запишите данные.");
+            }
         }
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void textBox4_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox5_TextChanged(object sender, EventArgs e)
         {
 
         }
 
         private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label8_Click(object sender, EventArgs e)
         {
 
         }
