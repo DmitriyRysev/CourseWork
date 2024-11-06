@@ -1,4 +1,5 @@
 using System;
+using System.Windows.Forms;
 using ClassLibrary;
 //using CourseWork.ClassLibrary;
 #pragma warning disable CA1416 // Проверка совместимости платформы
@@ -8,12 +9,14 @@ namespace CourseWork
     public partial class Object1
     {
         public Home home;
+        public Company company;
 
         //private string foto;
         public Object1()
         {
             InitializeComponent();
             this.home = new Company();
+            this.company = new Company();
             this.BackColor = Home.BackColor; // Установка цвета фона окна
 
             // Инициализация ListBox1 начальниками
@@ -107,8 +110,11 @@ namespace CourseWork
             textBox4.Clear();
             textBox5.Clear();
             textBox7.Clear();
+
             richTextBox1.Clear();
             richTextBox2.Clear();
+            richTextBox3.Clear();
+
         }
 
         private void RecordButton(object sender, EventArgs e)
@@ -156,6 +162,29 @@ namespace CourseWork
         private void Form1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void InitialsButton(object sender, EventArgs e)
+        {
+            // Установка имени с проверкой инициалов
+            company.Name = textBox6.Text;
+
+            // Вывод результата проверки в richTextBox3
+            richTextBox3.Text = $"ФИО: {company.Name}\n";
+        }
+
+        private void InfoButton(object sender, EventArgs e)
+        {
+            // Установка даты рождения
+            company.DateOfBirth = dateTimePicker2.Value;
+
+            company.Num = textBox5.Text;
+            company.Name = textBox6.Text;
+
+            //richTextBox3.Text = $"Информация:\n ФИО: {company.Name}\n Телефон: {company.Num}\n Дата рождения: {company.DateOfBirth}\n {company.ToString()}";
+            // Вызов метода NameText и вывод результата в richTextBox3
+            richTextBox3.Text += $"Информация:\n{company.NameText()}\n";
+            richTextBox3.Text += $"{company.ToString()}";
         }
     }
 #pragma warning restore CA1416 // Проверка совместимости платформы
