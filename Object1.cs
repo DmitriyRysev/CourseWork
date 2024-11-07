@@ -1,6 +1,7 @@
 using System;
 using System.Windows.Forms;
 using ClassLibrary;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 //using CourseWork.ClassLibrary;
 #pragma warning disable CA1416 // Проверка совместимости платформы
 
@@ -15,6 +16,13 @@ namespace CourseWork
         public Object1()
         {
             InitializeComponent();
+
+            // Устанавливаем начальное положение формы вручную
+            this.StartPosition = FormStartPosition.Manual;
+
+            // Указываем координаты для верхнего левого угла формы
+            this.Location = new Point(350, 5); // Например, немного левее и выше стандартного положения
+
             this.home = new Company();
             this.company = new Company();
             this.BackColor = Home.BackColor; // Установка цвета фона окна
@@ -24,6 +32,7 @@ namespace CourseWork
 
             // Инициализация ListBox2 отделами
             listBox2.Items.AddRange(new string[] { "Восточный", "Западный", "Южный", "Северный" });
+
         }
 
         private void read_button(object sender, EventArgs e)
@@ -73,7 +82,7 @@ namespace CourseWork
 
                 // Использование свойств
                 richTextBox1.Text += String.Format("Тип проекта:'{0}'\nВаш номер телефона: {1}\n", home.Info, home.Num);
-            }
+            }   
             else
             {
                 // Если хотя бы одно поле не заполнено, выводим сообщение об ошибке
@@ -89,6 +98,25 @@ namespace CourseWork
             textBox3.Clear();
             textBox4.Clear();
             textBox5.Clear();
+
+            // Создаем объекты с собственными конструкторами классов-наследников
+            Home home = new Home { Name = textBox2.Text, Num = textBox1.Text };
+            Company company = new Company { Name = textBox2.Text, Num = textBox1.Text };
+            Client client = new Client(textBox2.Text, textBox1.Text);
+
+            // Создаем объекты с типом базового класса DesignCompanyMember
+            DesignCompanyClient homeAsBase = new Home { Name = textBox2.Text, Num = textBox1.Text };
+            DesignCompanyClient companyAsBase = new Company { Name = textBox2.Text, Num = textBox1.Text };
+            DesignCompanyClient clientAsBase = new Client(textBox2.Text, textBox1.Text);
+
+            // Выводим результаты вызова метода NameText() для каждого объекта
+            richTextBox1.Text = home.NameText() + "\n" +
+                                company.NameText() + "\n" +
+                                client.NameText() + "\n" +
+
+                                homeAsBase.NameText() + "\n" +
+                                companyAsBase.NameText() + "\n" +
+                                clientAsBase.NameText();
         }
 
         private void hash_button(object sender, EventArgs e)
@@ -109,6 +137,7 @@ namespace CourseWork
             textBox3.Clear();
             textBox4.Clear();
             textBox5.Clear();
+            textBox6.Clear();
             textBox7.Clear();
 
             richTextBox1.Clear();
@@ -181,10 +210,50 @@ namespace CourseWork
             company.Num = textBox5.Text;
             company.Name = textBox6.Text;
 
-            //richTextBox3.Text = $"Информация:\n ФИО: {company.Name}\n Телефон: {company.Num}\n Дата рождения: {company.DateOfBirth}\n {company.ToString()}";
             // Вызов метода NameText и вывод результата в richTextBox3
             richTextBox3.Text += $"Информация:\n{company.NameText()}\n";
-            richTextBox3.Text += $"{company.ToString()}";
+            richTextBox3.Text += $"{company.ToString()}\n";
+        }
+
+        private Font selectedFont = new Font("Courier New", 12);
+        private Color selectedColor = Color.Black;
+        private Client client = new Client();
+
+        // Кнопка для выбора шрифта из диалогового окна
+        private void FontButton(object sender, EventArgs e)
+        {
+            using (FontDialog fontDialog = new FontDialog())
+            {
+                if (fontDialog.ShowDialog() == DialogResult.OK)
+                {
+                    selectedFont = fontDialog.Font;
+                }
+            }
+        }
+
+        // Кнопка для выбора цвета из диалогового окна
+        private void ColorButton(object sender, EventArgs e)
+        {
+            using (ColorDialog colorDialog = new ColorDialog())
+            {
+                if (colorDialog.ShowDialog() == DialogResult.OK)
+                {
+                    selectedColor = colorDialog.Color;
+                }
+            }
+        }
+
+        // Кнопка вывода ФИО в pictureBox
+        private void DisplayButton(object sender, EventArgs e)
+        {
+            // Убираем фоновое изображение с PictureBox
+            pictureBox1.BackgroundImage = null;
+
+            // Обновляем данные клиента из TextBox
+            client.Name = textBox6.Text;  // ФИО из TextBox6
+
+            // Передаем PictureBox, FontDialog и ColorDialog в метод NameText
+            client.NameText(pictureBox1, selectedFont, selectedColor);
         }
     }
 #pragma warning restore CA1416 // Проверка совместимости платформы

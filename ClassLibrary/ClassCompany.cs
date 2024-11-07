@@ -29,7 +29,7 @@ namespace ClassLibrary
             set
             {
                 // Проверка на точку (как признак инициалов)
-                if (!string.IsNullOrEmpty(value) && value.Contains("."))
+                if (!string.IsNullOrEmpty(value) && value.Contains('.'))
                 {
                     name = value;
                 }

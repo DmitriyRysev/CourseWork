@@ -63,9 +63,139 @@ namespace CourseWork.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _4845c50a3fddb4ce6c3835e076c5b267 {
+            get {
+                object obj = ResourceManager.GetObject("4845c50a3fddb4ce6c3835e076c5b267", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _4845c50a3fddb4ce6c3835e076c5b267__1_ {
+            get {
+                object obj = ResourceManager.GetObject("4845c50a3fddb4ce6c3835e076c5b267 (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _4845c50a3fddb4ce6c3835e076c5b2671 {
+            get {
+                object obj = ResourceManager.GetObject("4845c50a3fddb4ce6c3835e076c5b2671", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ForPicBox {
+            get {
+                object obj = ResourceManager.GetObject("ForPicBox", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap PanelPoster {
+            get {
+                object obj = ResourceManager.GetObject("PanelPoster", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap PanelPoster1 {
+            get {
+                object obj = ResourceManager.GetObject("PanelPoster1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap город {
             get {
                 object obj = ResourceManager.GetObject("город", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap постер {
+            get {
+                object obj = ResourceManager.GetObject("постер", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Снимок_экрана_2024_11_06_235753 {
+            get {
+                object obj = ResourceManager.GetObject("Снимок экрана 2024-11-06 235753", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Снимок_экрана_2024_11_07_004031 {
+            get {
+                object obj = ResourceManager.GetObject("Снимок экрана 2024-11-07 004031", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Снимок_экрана_2024_11_07_0040311 {
+            get {
+                object obj = ResourceManager.GetObject("Снимок экрана 2024-11-07 0040311", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Снимок_экрана_2024_11_07_0040312 {
+            get {
+                object obj = ResourceManager.GetObject("Снимок экрана 2024-11-07 0040312", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Шрифт {
+            get {
+                object obj = ResourceManager.GetObject("Шрифт", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap шрифт2 {
+            get {
+                object obj = ResourceManager.GetObject("шрифт2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

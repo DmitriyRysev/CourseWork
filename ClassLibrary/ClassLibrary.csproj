@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="System.Drawing.Common" Version="8.0.10" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Reference Include="MyClassLibrary">
       <HintPath>..\..\Labs\MyClassLibrary\bin\Debug\netstandard2.0\MyClassLibrary.dll</HintPath>
     </Reference>
