@@ -1,25 +1,54 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="System.Object">
-    <Position X="6.75" Y="2" Width="1.5" />
-    <TypeIdentifier />
-  </Class>
   <Class Name="ClassLibrary.Company">
-    <Position X="1.75" Y="2.25" Width="1.5" />
+    <Position X="5" Y="2.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAIAAAAAAAAAAEAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Class2.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAIAAAAAAAAQAEAAUAAAAAAAAAAAAQAA=</HashCode>
+      <FileName>ClassCompany.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ClassLibrary.Home">
-    <Position X="4.25" Y="1.5" Width="1.5" />
+    <Position X="5" Y="4.25" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
-      <HashCode>IAAAACAAAAAgAAAAAAAACAgAAAAAAAAIQAAAAEABAAA=</HashCode>
-      <FileName>Class1.cs</FileName>
+      <HashCode>IAAAACAAAAAgAAAAAAAACAwAAAAUAAAIQAAAAEABQAA=</HashCode>
+      <FileName>ClassHome.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ClassLibrary.Client">
+    <Position X="5" Y="0.75" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>IAAAACAAAAAAAAAEAAAAAAQAAAAUAAAAAAAAAAAAQAA=</HashCode>
+      <FileName>ClassClient.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ClassLibrary.DesignCompanyClient">
+    <Position X="5" Y="6" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAQAAAAQAAAAAAAAAAAAQAA=</HashCode>
+      <FileName>ClassDesignClient.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Struct Name="ClassLibrary.HomeProject">
-    <Position X="9.25" Y="2.25" Width="1.5" />
+    <Position X="14" Y="4" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAQAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAACA=</HashCode>
       <FileName>StructHome.cs</FileName>

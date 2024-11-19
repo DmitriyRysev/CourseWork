@@ -11,6 +11,7 @@ namespace CourseWork
     {
         public Home home;
         public Company company;
+        private ProjectAction projectAction;
 
         //private string foto;
         public Object1()
@@ -33,6 +34,52 @@ namespace CourseWork
             // Инициализация ListBox2 отделами
             listBox2.Items.AddRange(new string[] { "Восточный", "Западный", "Южный", "Северный" });
 
+            // Создаём экземпляр ProjectAction
+            projectAction = new ProjectAction();
+
+            // Подписываемся на события
+            projectAction.ProcessHandler += OnProjectProcessed;
+            projectAction.RemoveHandler += OnProjectRemoved;
+        }
+
+        // Обработчик события ProcessHandler 
+        private void OnProjectProcessed(object sender, ProjectEventArgs e)
+        {
+            string message = $"[{DateTime.Now:T}] Проект под номером {e.ProjectNumber} добавлен в обработку.";
+            richTextBox1.AppendText(message + Environment.NewLine);
+        }
+
+        // Обработчик события RemoveHandler 
+        private void OnProjectRemoved(object sender, ProjectEventArgs e)
+        {
+            string message = $"[{DateTime.Now:T}] Проект под номером {e.ProjectNumber} удалён из обработки.";
+            richTextBox1.AppendText(message + Environment.NewLine);
+        }
+
+        private void ProcessButton(object sender, EventArgs e)
+        {
+            if (int.TryParse(textBox8.Text, out int projectNumber))
+            {
+                projectAction.ProjectNumber = projectNumber;
+                projectAction.ProcessProject(); 
+            }
+            else
+            {
+                MessageBox.Show("Введите корректный номер проекта.", "Ошибка");
+            }
+        }
+
+        private void RemoveButton(object sender, EventArgs e)
+        {
+            if (int.TryParse(textBox8.Text, out int projectNumber))
+            {
+                projectAction.ProjectNumber = projectNumber;
+                projectAction.RemoveProject();
+            }
+            else
+            {
+                MessageBox.Show("Введите корректный номер проекта.", "Ошибка");
+            }
         }
 
         private void read_button(object sender, EventArgs e)
@@ -82,7 +129,7 @@ namespace CourseWork
 
                 // Использование свойств
                 richTextBox1.Text += String.Format("Тип проекта:'{0}'\nВаш номер телефона: {1}\n", home.Info, home.Num);
-            }   
+            }
             else
             {
                 // Если хотя бы одно поле не заполнено, выводим сообщение об ошибке
