@@ -12,6 +12,7 @@ namespace CourseWork
         public Home home;
         public Company company;
         private ProjectAction projectAction;
+        private AssignmentManager assignmentManager;
 
         //private string foto;
         public Object1()
@@ -34,12 +35,42 @@ namespace CourseWork
             // Инициализация ListBox2 отделами
             listBox2.Items.AddRange(new string[] { "Восточный", "Западный", "Южный", "Северный" });
 
+            // Инициализация AssignmentManager
+            assignmentManager = new AssignmentManager(listBox1.Items, listBox2.Items);
+
             // Создаём экземпляр ProjectAction
             projectAction = new ProjectAction();
 
             // Подписываемся на события
             projectAction.ProcessHandler += OnProjectProcessed;
             projectAction.RemoveHandler += OnProjectRemoved;
+
+            // Добавление элементов из массива
+            string[] doorItems = { "Дуб", "Береза", "Ель" };
+            comboBox1.Items.AddRange(doorItems);
+            comboBox1.Text = "Выберите дверь";
+
+            string[] windowItems = { "Дерево", "Пластик", "Металл" };
+            comboBox2.Items.AddRange(windowItems);
+            comboBox2.Text = "Выберите раму окна";
+
+            string[] roofItems = { "Из черепицы", "Кирпичная", "Кровля из металла" };
+            comboBox3.Items.AddRange(roofItems);
+            comboBox3.Text = "Выберите вид крыши";
+
+            string[] projItems = { "Премиальный", "Стандартный" };
+            comboBox4.Items.AddRange(projItems);
+            comboBox4.Text = "Выберите тип проекта";
+
+            string[] areaItems = { "150", "200", "250", "300" };
+            comboBox5.Items.AddRange(areaItems);
+            comboBox5.Text = "Площадь участка";
+
+            string[] floorItems = { "1", "2", "3" };
+            comboBox6.Items.AddRange(floorItems);
+            comboBox6.Text = "Количество этажей";
+
+
         }
 
         // Обработчик события ProcessHandler 
@@ -61,7 +92,7 @@ namespace CourseWork
             if (int.TryParse(textBox8.Text, out int projectNumber))
             {
                 projectAction.ProjectNumber = projectNumber;
-                projectAction.ProcessProject(); 
+                projectAction.ProcessProject();
             }
             else
             {
@@ -91,12 +122,12 @@ namespace CourseWork
             // Используем конструктор 
             HomeProject project = new HomeProject(ProjNum, dateTimePicker1.Value.AddDays(7));
 
-            this.home.door = textBox1.Text;
-            this.home.window = textBox2.Text;
-            this.home.roof = textBox3.Text;
+            this.home.door = comboBox1.Text;
+            this.home.window = comboBox2.Text;
+            this.home.roof = comboBox3.Text;
 
             // Использование свойства
-            this.home.Info = textBox4.Text;
+            this.home.Info = comboBox4.Text;
             this.home.Num = textBox5.Text;
 
 
@@ -140,30 +171,26 @@ namespace CourseWork
         private void clear_button(object sender, EventArgs e)
         {
             // Очищение полей ввода
-            textBox1.Clear();
-            textBox2.Clear();
-            textBox3.Clear();
-            textBox4.Clear();
             textBox5.Clear();
 
-            // Создаем объекты с собственными конструкторами классов-наследников
-            Home home = new Home { Name = textBox2.Text, Num = textBox1.Text };
-            Company company = new Company { Name = textBox2.Text, Num = textBox1.Text };
-            Client client = new Client(textBox2.Text, textBox1.Text);
+            //// Создаем объекты с собственными конструкторами классов-наследников
+            //Home home = new Home { Name = comboBox2.Text, Num = comboBox1.Text };
+            //Company company = new Company { Name = comboBox2.Text, Num = comboBox1.Text };
+            //Client client = new Client(comboBox2.Text, comboBox1.Text);
 
-            // Создаем объекты с типом базового класса DesignCompanyMember
-            DesignCompanyClient homeAsBase = new Home { Name = textBox2.Text, Num = textBox1.Text };
-            DesignCompanyClient companyAsBase = new Company { Name = textBox2.Text, Num = textBox1.Text };
-            DesignCompanyClient clientAsBase = new Client(textBox2.Text, textBox1.Text);
+            //// Создаем объекты с типом базового класса DesignCompanyMember
+            //DesignCompanyClient homeAsBase = new Home { Name = comboBox2.Text, Num = comboBox1.Text };
+            //DesignCompanyClient companyAsBase = new Company { Name = comboBox2.Text, Num = comboBox1.Text };
+            //DesignCompanyClient clientAsBase = new Client(comboBox2.Text, comboBox1.Text);
 
-            // Выводим результаты вызова метода NameText() для каждого объекта
-            richTextBox1.Text = home.NameText() + "\n" +
-                                company.NameText() + "\n" +
-                                client.NameText() + "\n" +
+            //// Выводим результаты вызова метода NameText() для каждого объекта
+            //richTextBox1.Text = home.NameText() + "\n" +
+            //                    company.NameText() + "\n" +
+            //                    client.NameText() + "\n" +
 
-                                homeAsBase.NameText() + "\n" +
-                                companyAsBase.NameText() + "\n" +
-                                clientAsBase.NameText();
+            //                    homeAsBase.NameText() + "\n" +
+            //                    companyAsBase.NameText() + "\n" +
+            //                    clientAsBase.NameText();
         }
 
         private void hash_button(object sender, EventArgs e)
@@ -173,16 +200,12 @@ namespace CourseWork
                 "для идентификации объекта: {1}. \n", ToString(), GetHashCode());
 
             //Company company = new Company(textBox7.Text, listBox1.Text, listBox2.Text);
-            //richTextBox2.Text += company.city.GetHashCode().ToString();
+            //richcomboBox2.Text += company.city.GetHashCode().ToString();
         }
 
         private void new_proj_button(object sender, EventArgs e)
         {
             // "новый проект" - очищение всего окна полностью
-            textBox1.Clear();
-            textBox2.Clear();
-            textBox3.Clear();
-            textBox4.Clear();
             textBox5.Clear();
             textBox6.Clear();
             textBox7.Clear();
@@ -202,9 +225,9 @@ namespace CourseWork
             Home homeAsBase = company;
 
             // Используем базовые свойства объекта Home
-            homeAsBase.window = textBox1.Text;
-            homeAsBase.door = textBox2.Text;
-            homeAsBase.roof = textBox3.Text;
+            homeAsBase.window = comboBox1.Text;
+            homeAsBase.door = comboBox2.Text;
+            homeAsBase.roof = comboBox3.Text;
 
             // Формируем строку для записи
             string dataToWrite = $"Город: {homeAsBase.city}\nНачальник отдела: {company.Head}\nОтдел: {company.Department}";
@@ -257,9 +280,11 @@ namespace CourseWork
             company.Num = textBox5.Text;
             company.Name = textBox6.Text;
 
+            richTextBox3.Clear();
+
             // Вызов метода NameText и вывод результата в richTextBox3
-            richTextBox3.Text += $"Информация:\n{company.NameText()}\n";
-            richTextBox3.Text += $"{company.ToString()}\n";
+            richTextBox3.Text += $"{company.NameText()}\n";
+            //richTextBox3.Text += $"{company.ToString()}\n";
         }
 
         private Font selectedFont = new Font("Courier New", 12);
@@ -301,6 +326,70 @@ namespace CourseWork
 
             // Передаем PictureBox, FontDialog и ColorDialog в метод NameText
             client.NameText(pictureBox1, selectedFont, selectedColor);
+        }
+
+        private void AssignButton(object sender, EventArgs e)
+        {
+            // Получение данных из TextBox и ListBox
+            string clientName = textBox6.Text;
+            int managerIndex = listBox1.SelectedIndex;
+            int departmentIndex = listBox2.SelectedIndex;
+
+            if (string.IsNullOrWhiteSpace(clientName) || managerIndex == -1 || departmentIndex == -1)
+            {
+                MessageBox.Show("Ошибка: заполните все поля и выберите элементы из списков.");
+                return;
+            }
+
+            // Формирование строки с информацией
+            string result = assignmentManager.GetAssignment(clientName, managerIndex, departmentIndex);
+
+            // Вывод результата
+            richTextBox2.Text = result;
+        }
+
+        private void CalculateComplexityButton(object sender, EventArgs e)
+        {
+            // Проверка введенных данных
+            if (int.TryParse(comboBox5.Text, out int area) && int.TryParse(comboBox6.Text, out int floors))
+            {
+                // Создание объекта и расчет сложности
+                ComplexityInfo project = new ComplexityInfo
+                {
+                    Area = area,
+                    Floors = floors
+                };
+
+                // Преобразование интерфейса обратно в класс ComplexityInfo
+                if (project is ComplexityInfo detailedProject)
+                {
+                    // Доступ к специфическим свойствам и методам класса ComplexityInfo
+                    richTextBox1.AppendText($"Площадь: {detailedProject.Area} кв.м\n");
+                    richTextBox1.AppendText($"Количество этажей: {detailedProject.Floors}\n");
+                }
+                else
+                {
+                    richTextBox1.AppendText("Не удалось преобразовать объект в ComplexityInfo.\n");
+                }
+
+
+                // Получение данных из методов
+                double complexity = project.CalculateComplexity();
+                string complexityLevel = project.GetComplexityLevel();
+
+                richTextBox1.Clear();
+
+                // Вывод данных в RichTextBox
+                richTextBox1.AppendText($"Площадь: {area} кв.м\n");
+                richTextBox1.AppendText($"Количество этажей: {floors}\n");
+                richTextBox1.AppendText($"Сложность: {complexityLevel} (Оценка: {complexity:F2})\n");
+            }
+            else
+            {
+                MessageBox.Show("Пожалуйста, введите корректные данные.", "Ошибка");
+            }
+
+
         }
     }
 #pragma warning restore CA1416 // Проверка совместимости платформы

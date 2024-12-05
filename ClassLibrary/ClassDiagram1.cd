@@ -47,12 +47,90 @@
       <FileName>ClassDesignClient.cs</FileName>
     </TypeIdentifier>
   </Class>
+  <Class Name="ClassLibrary.AssignmentManager">
+    <Position X="7.25" Y="0.75" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAACAAAAAAgIAAAAAABAAAAAAAAAAA=</HashCode>
+      <FileName>ClassAssignMng.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ClassLibrary.ProjectAction">
+    <Position X="7.25" Y="2.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+      <Compartment Name="Events" Collapsed="true" />
+    </Compartments>
+    <NestedTypes>
+      <Delegate Name="ClassLibrary.ProjectAction.ActionHandler" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>ClassProjAction.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Delegate>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAACAAkAAAAAGAAAAAAAAAAAAA=</HashCode>
+      <FileName>ClassProjAction.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ClassLibrary.ProjectEventArgs">
+    <Position X="7.25" Y="4.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>ClassProjEveArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ClassLibrary.ComplexityInfo">
+    <Position X="2.75" Y="4" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAAAgAAAAAAAAAAIAAAAAAAAAAAQAAAAA=</HashCode>
+      <FileName>ClassComplexity.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.717" />
+  </Class>
   <Struct Name="ClassLibrary.HomeProject">
-    <Position X="14" Y="4" Width="1.5" />
+    <Position X="9.5" Y="2.75" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
       <HashCode>AAAAAAQAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAACA=</HashCode>
       <FileName>StructHome.cs</FileName>
     </TypeIdentifier>
   </Struct>
+  <Interface Name="ClassLibrary.IComplexity">
+    <Position X="2.75" Y="1" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interface1.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="ClassLibrary.IComplexity2">
+    <Position X="2.75" Y="2.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interface2.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>

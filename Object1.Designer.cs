@@ -34,21 +34,19 @@ namespace CourseWork
             panel1 = new Panel();
             label1 = new Label();
             groupBox1 = new GroupBox();
+            comboBox4 = new ComboBox();
+            comboBox3 = new ComboBox();
+            comboBox2 = new ComboBox();
+            comboBox1 = new ComboBox();
             textBox5 = new TextBox();
             label8 = new Label();
             label7 = new Label();
-            textBox4 = new TextBox();
             dateTimePicker1 = new DateTimePicker();
             label6 = new Label();
             label5 = new Label();
             label4 = new Label();
             label3 = new Label();
-            textBox3 = new TextBox();
-            textBox2 = new TextBox();
-            textBox1 = new TextBox();
             label2 = new Label();
-            groupBox2 = new GroupBox();
-            richTextBox1 = new RichTextBox();
             Button1 = new Button();
             button2 = new Button();
             button3 = new Button();
@@ -79,10 +77,18 @@ namespace CourseWork
             label13 = new Label();
             label15 = new Label();
             label14 = new Label();
+            button14 = new Button();
+            richTextBox1 = new RichTextBox();
+            groupBox2 = new GroupBox();
+            label16 = new Label();
+            comboBox5 = new ComboBox();
+            label17 = new Label();
+            comboBox6 = new ComboBox();
+            button15 = new Button();
             panel1.SuspendLayout();
             groupBox1.SuspendLayout();
-            groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            groupBox2.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
@@ -110,32 +116,69 @@ namespace CourseWork
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(comboBox4);
+            groupBox1.Controls.Add(comboBox3);
+            groupBox1.Controls.Add(comboBox2);
+            groupBox1.Controls.Add(comboBox1);
             groupBox1.Controls.Add(textBox5);
             groupBox1.Controls.Add(label8);
             groupBox1.Controls.Add(label7);
-            groupBox1.Controls.Add(textBox4);
             groupBox1.Controls.Add(dateTimePicker1);
             groupBox1.Controls.Add(label6);
             groupBox1.Controls.Add(label5);
             groupBox1.Controls.Add(label4);
             groupBox1.Controls.Add(label3);
-            groupBox1.Controls.Add(textBox3);
-            groupBox1.Controls.Add(textBox2);
-            groupBox1.Controls.Add(textBox1);
             groupBox1.Controls.Add(label2);
             groupBox1.Font = new Font("Courier New", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
             groupBox1.Location = new Point(12, 105);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(276, 351);
+            groupBox1.Size = new Size(279, 351);
             groupBox1.TabIndex = 1;
             groupBox1.TabStop = false;
             groupBox1.Text = "Ввод и редактирование";
             // 
+            // comboBox4
+            // 
+            comboBox4.Font = new Font("Courier New", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            comboBox4.FormattingEnabled = true;
+            comboBox4.Location = new Point(6, 260);
+            comboBox4.Name = "comboBox4";
+            comboBox4.Size = new Size(267, 28);
+            comboBox4.TabIndex = 18;
+            // 
+            // comboBox3
+            // 
+            comboBox3.Font = new Font("Courier New", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            comboBox3.FormattingEnabled = true;
+            comboBox3.Location = new Point(60, 148);
+            comboBox3.Name = "comboBox3";
+            comboBox3.Size = new Size(213, 28);
+            comboBox3.TabIndex = 17;
+            // 
+            // comboBox2
+            // 
+            comboBox2.Font = new Font("Courier New", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            comboBox2.FormattingEnabled = true;
+            comboBox2.Location = new Point(60, 106);
+            comboBox2.Name = "comboBox2";
+            comboBox2.Size = new Size(213, 28);
+            comboBox2.TabIndex = 16;
+            // 
+            // comboBox1
+            // 
+            comboBox1.Font = new Font("Courier New", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Location = new Point(60, 65);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(213, 28);
+            comboBox1.TabIndex = 15;
+            // 
             // textBox5
             // 
+            textBox5.Font = new Font("Courier New", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             textBox5.Location = new Point(6, 314);
             textBox5.Name = "textBox5";
-            textBox5.Size = new Size(264, 26);
+            textBox5.Size = new Size(267, 27);
             textBox5.TabIndex = 14;
             // 
             // label8
@@ -160,19 +203,12 @@ namespace CourseWork
             label7.TabIndex = 12;
             label7.Text = "Тип проекта:";
             // 
-            // textBox4
-            // 
-            textBox4.Location = new Point(6, 258);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(264, 26);
-            textBox4.TabIndex = 11;
-            // 
             // dateTimePicker1
             // 
             dateTimePicker1.Font = new Font("Courier New", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             dateTimePicker1.Location = new Point(6, 202);
             dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(264, 26);
+            dateTimePicker1.Size = new Size(267, 26);
             dateTimePicker1.TabIndex = 10;
             dateTimePicker1.ValueChanged += dateTimePicker1_ValueChanged;
             // 
@@ -192,7 +228,7 @@ namespace CourseWork
             label5.AutoSize = true;
             label5.Font = new Font("Courier New", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label5.ForeColor = Color.Black;
-            label5.Location = new Point(6, 147);
+            label5.Location = new Point(6, 153);
             label5.Name = "label5";
             label5.Size = new Size(53, 17);
             label5.TabIndex = 8;
@@ -204,7 +240,7 @@ namespace CourseWork
             label4.FlatStyle = FlatStyle.Flat;
             label4.Font = new Font("Courier New", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label4.ForeColor = Color.Black;
-            label4.Location = new Point(6, 106);
+            label4.Location = new Point(6, 111);
             label4.Name = "label4";
             label4.Size = new Size(44, 17);
             label4.TabIndex = 7;
@@ -221,27 +257,6 @@ namespace CourseWork
             label3.TabIndex = 6;
             label3.Text = "Двери";
             // 
-            // textBox3
-            // 
-            textBox3.Location = new Point(76, 142);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(194, 26);
-            textBox3.TabIndex = 5;
-            // 
-            // textBox2
-            // 
-            textBox2.Location = new Point(76, 101);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(194, 26);
-            textBox2.TabIndex = 4;
-            // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(76, 65);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(194, 26);
-            textBox1.TabIndex = 3;
-            // 
             // label2
             // 
             label2.AutoSize = true;
@@ -253,33 +268,13 @@ namespace CourseWork
             label2.TabIndex = 2;
             label2.Text = "Введите желаемые \r\nкомпоненты дома:";
             // 
-            // groupBox2
-            // 
-            groupBox2.Controls.Add(richTextBox1);
-            groupBox2.Font = new Font("Courier New", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            groupBox2.Location = new Point(296, 105);
-            groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(476, 351);
-            groupBox2.TabIndex = 9;
-            groupBox2.TabStop = false;
-            groupBox2.Text = "Просмотр";
-            // 
-            // richTextBox1
-            // 
-            richTextBox1.Font = new Font("Courier New", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            richTextBox1.Location = new Point(6, 22);
-            richTextBox1.Name = "richTextBox1";
-            richTextBox1.Size = new Size(464, 322);
-            richTextBox1.TabIndex = 0;
-            richTextBox1.Text = "";
-            // 
             // Button1
             // 
             Button1.Font = new Font("Courier New", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Button1.ForeColor = Color.Black;
-            Button1.Location = new Point(12, 462);
+            Button1.Location = new Point(18, 462);
             Button1.Name = "Button1";
-            Button1.Size = new Size(135, 63);
+            Button1.Size = new Size(129, 63);
             Button1.TabIndex = 10;
             Button1.Text = "Прочитать";
             Button1.UseVisualStyleBackColor = true;
@@ -289,9 +284,9 @@ namespace CourseWork
             // 
             button2.Font = new Font("Courier New", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button2.ForeColor = Color.Black;
-            button2.Location = new Point(155, 462);
+            button2.Location = new Point(158, 462);
             button2.Name = "button2";
-            button2.Size = new Size(135, 63);
+            button2.Size = new Size(127, 63);
             button2.TabIndex = 11;
             button2.Text = "Очистить";
             button2.UseVisualStyleBackColor = true;
@@ -301,9 +296,9 @@ namespace CourseWork
             // 
             button3.Font = new Font("Courier New", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button3.ForeColor = Color.Black;
-            button3.Location = new Point(302, 462);
+            button3.Location = new Point(302, 411);
             button3.Name = "button3";
-            button3.Size = new Size(229, 63);
+            button3.Size = new Size(149, 63);
             button3.TabIndex = 12;
             button3.Text = "Получить хэш-код";
             button3.UseVisualStyleBackColor = true;
@@ -313,9 +308,9 @@ namespace CourseWork
             // 
             button4.Font = new Font("Courier New", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button4.ForeColor = Color.Black;
-            button4.Location = new Point(537, 462);
+            button4.Location = new Point(459, 411);
             button4.Name = "button4";
-            button4.Size = new Size(229, 63);
+            button4.Size = new Size(149, 63);
             button4.TabIndex = 13;
             button4.Text = "Новый проект";
             button4.UseVisualStyleBackColor = true;
@@ -337,7 +332,7 @@ namespace CourseWork
             label10.AutoSize = true;
             label10.Font = new Font("Courier New", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label10.ForeColor = Color.Black;
-            label10.Location = new Point(881, 164);
+            label10.Location = new Point(898, 160);
             label10.Name = "label10";
             label10.Size = new Size(129, 20);
             label10.TabIndex = 16;
@@ -345,29 +340,29 @@ namespace CourseWork
             // 
             // listBox1
             // 
-            listBox1.Font = new Font("Courier New", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            listBox1.Font = new Font("Courier New", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             listBox1.FormattingEnabled = true;
-            listBox1.Location = new Point(778, 189);
+            listBox1.Location = new Point(778, 183);
             listBox1.Name = "listBox1";
-            listBox1.Size = new Size(180, 104);
+            listBox1.Size = new Size(180, 84);
             listBox1.TabIndex = 17;
             // 
             // listBox2
             // 
-            listBox2.Font = new Font("Courier New", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            listBox2.Font = new Font("Courier New", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             listBox2.FormattingEnabled = true;
-            listBox2.Location = new Point(965, 189);
+            listBox2.Location = new Point(964, 183);
             listBox2.Name = "listBox2";
-            listBox2.Size = new Size(180, 104);
+            listBox2.Size = new Size(180, 84);
             listBox2.TabIndex = 18;
             // 
             // button5
             // 
             button5.Font = new Font("Courier New", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button5.ForeColor = Color.Black;
-            button5.Location = new Point(778, 314);
+            button5.Location = new Point(778, 284);
             button5.Name = "button5";
-            button5.Size = new Size(180, 45);
+            button5.Size = new Size(180, 63);
             button5.TabIndex = 19;
             button5.Text = "Запись";
             button5.UseVisualStyleBackColor = true;
@@ -377,9 +372,9 @@ namespace CourseWork
             // 
             button6.Font = new Font("Courier New", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button6.ForeColor = Color.Black;
-            button6.Location = new Point(964, 314);
+            button6.Location = new Point(964, 284);
             button6.Name = "button6";
-            button6.Size = new Size(181, 45);
+            button6.Size = new Size(181, 63);
             button6.TabIndex = 20;
             button6.Text = "Чтение";
             button6.UseVisualStyleBackColor = true;
@@ -388,26 +383,26 @@ namespace CourseWork
             // richTextBox2
             // 
             richTextBox2.Font = new Font("Courier New", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            richTextBox2.Location = new Point(778, 365);
+            richTextBox2.Location = new Point(778, 423);
             richTextBox2.Name = "richTextBox2";
-            richTextBox2.Size = new Size(367, 160);
+            richTextBox2.Size = new Size(367, 102);
             richTextBox2.TabIndex = 21;
             richTextBox2.Text = "";
             // 
             // textBox7
             // 
-            textBox7.Font = new Font("Courier New", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            textBox7.Font = new Font("Courier New", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             textBox7.Location = new Point(778, 131);
             textBox7.Name = "textBox7";
-            textBox7.Size = new Size(366, 26);
+            textBox7.Size = new Size(366, 27);
             textBox7.TabIndex = 4;
             // 
             // richTextBox3
             // 
             richTextBox3.Font = new Font("Courier New", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            richTextBox3.Location = new Point(12, 731);
+            richTextBox3.Location = new Point(12, 720);
             richTextBox3.Name = "richTextBox3";
-            richTextBox3.Size = new Size(364, 208);
+            richTextBox3.Size = new Size(364, 219);
             richTextBox3.TabIndex = 1;
             richTextBox3.Text = "";
             // 
@@ -415,9 +410,9 @@ namespace CourseWork
             // 
             button7.Font = new Font("Courier New", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button7.ForeColor = Color.Black;
-            button7.Location = new Point(12, 669);
+            button7.Location = new Point(12, 651);
             button7.Name = "button7";
-            button7.Size = new Size(178, 56);
+            button7.Size = new Size(178, 63);
             button7.TabIndex = 22;
             button7.Text = "Инициалы";
             button7.UseVisualStyleBackColor = true;
@@ -427,9 +422,9 @@ namespace CourseWork
             // 
             button8.Font = new Font("Courier New", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button8.ForeColor = Color.Black;
-            button8.Location = new Point(196, 669);
+            button8.Location = new Point(196, 651);
             button8.Name = "button8";
-            button8.Size = new Size(180, 56);
+            button8.Size = new Size(180, 63);
             button8.TabIndex = 23;
             button8.Text = "Информация";
             button8.UseVisualStyleBackColor = true;
@@ -440,7 +435,7 @@ namespace CourseWork
             label11.AutoSize = true;
             label11.Font = new Font("Courier New", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label11.ForeColor = Color.Black;
-            label11.Location = new Point(12, 548);
+            label11.Location = new Point(12, 537);
             label11.Name = "label11";
             label11.Size = new Size(279, 20);
             label11.TabIndex = 24;
@@ -448,10 +443,10 @@ namespace CourseWork
             // 
             // textBox6
             // 
-            textBox6.Font = new Font("Courier New", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            textBox6.Location = new Point(12, 574);
+            textBox6.Font = new Font("Courier New", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            textBox6.Location = new Point(12, 563);
             textBox6.Name = "textBox6";
-            textBox6.Size = new Size(364, 26);
+            textBox6.Size = new Size(364, 27);
             textBox6.TabIndex = 25;
             // 
             // label12
@@ -459,7 +454,7 @@ namespace CourseWork
             label12.AutoSize = true;
             label12.Font = new Font("Courier New", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label12.ForeColor = Color.Black;
-            label12.Location = new Point(12, 607);
+            label12.Location = new Point(12, 596);
             label12.Name = "label12";
             label12.Size = new Size(309, 20);
             label12.TabIndex = 26;
@@ -468,7 +463,7 @@ namespace CourseWork
             // dateTimePicker2
             // 
             dateTimePicker2.Font = new Font("Courier New", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dateTimePicker2.Location = new Point(12, 633);
+            dateTimePicker2.Location = new Point(12, 619);
             dateTimePicker2.Name = "dateTimePicker2";
             dateTimePicker2.Size = new Size(364, 26);
             dateTimePicker2.TabIndex = 27;
@@ -513,25 +508,25 @@ namespace CourseWork
             // 
             pictureBox1.BackColor = SystemColors.Window;
             pictureBox1.Image = Properties.Resources.шрифт2;
-            pictureBox1.Location = new Point(388, 548);
+            pictureBox1.Location = new Point(388, 563);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(378, 253);
+            pictureBox1.Size = new Size(378, 238);
             pictureBox1.TabIndex = 32;
             pictureBox1.TabStop = false;
             // 
             // panel2
             // 
             panel2.BackgroundImage = Properties.Resources.PanelPoster1;
-            panel2.Location = new Point(778, 735);
+            panel2.Location = new Point(778, 748);
             panel2.Name = "panel2";
-            panel2.Size = new Size(366, 204);
+            panel2.Size = new Size(366, 191);
             panel2.TabIndex = 33;
             // 
             // button12
             // 
             button12.Font = new Font("Courier New", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button12.ForeColor = Color.Black;
-            button12.Location = new Point(778, 666);
+            button12.Location = new Point(778, 679);
             button12.Name = "button12";
             button12.Size = new Size(177, 63);
             button12.TabIndex = 34;
@@ -543,7 +538,7 @@ namespace CourseWork
             // 
             button13.Font = new Font("Courier New", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button13.ForeColor = Color.Black;
-            button13.Location = new Point(967, 666);
+            button13.Location = new Point(967, 679);
             button13.Name = "button13";
             button13.Size = new Size(177, 63);
             button13.TabIndex = 35;
@@ -575,7 +570,7 @@ namespace CourseWork
             label15.AutoSize = true;
             label15.Font = new Font("Courier New", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label15.ForeColor = Color.Black;
-            label15.Location = new Point(965, 592);
+            label15.Location = new Point(964, 596);
             label15.Name = "label15";
             label15.Size = new Size(143, 68);
             label15.TabIndex = 39;
@@ -586,11 +581,95 @@ namespace CourseWork
             label14.AutoSize = true;
             label14.Font = new Font("Courier New", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label14.ForeColor = Color.Black;
-            label14.Location = new Point(778, 592);
+            label14.Location = new Point(778, 596);
             label14.Name = "label14";
             label14.Size = new Size(134, 68);
             label14.TabIndex = 38;
             label14.Text = "Добавьте его \r\nв обработку,\r\nесли готовы \r\nоформить заказ";
+            // 
+            // button14
+            // 
+            button14.Font = new Font("Courier New", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button14.ForeColor = Color.Black;
+            button14.Location = new Point(778, 354);
+            button14.Name = "button14";
+            button14.Size = new Size(366, 63);
+            button14.TabIndex = 40;
+            button14.Text = "Индексаторы";
+            button14.UseVisualStyleBackColor = true;
+            button14.Click += AssignButton;
+            // 
+            // richTextBox1
+            // 
+            richTextBox1.Font = new Font("Courier New", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            richTextBox1.Location = new Point(6, 22);
+            richTextBox1.Name = "richTextBox1";
+            richTextBox1.Size = new Size(464, 272);
+            richTextBox1.TabIndex = 0;
+            richTextBox1.Text = "";
+            // 
+            // groupBox2
+            // 
+            groupBox2.Controls.Add(richTextBox1);
+            groupBox2.Font = new Font("Courier New", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            groupBox2.Location = new Point(296, 105);
+            groupBox2.Name = "groupBox2";
+            groupBox2.Size = new Size(476, 300);
+            groupBox2.TabIndex = 9;
+            groupBox2.TabStop = false;
+            groupBox2.Text = "Просмотр";
+            // 
+            // label16
+            // 
+            label16.AutoSize = true;
+            label16.Font = new Font("Courier New", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label16.ForeColor = Color.Black;
+            label16.Location = new Point(296, 477);
+            label16.Name = "label16";
+            label16.Size = new Size(233, 17);
+            label16.TabIndex = 41;
+            label16.Text = "Выберите площадь участка:";
+            // 
+            // comboBox5
+            // 
+            comboBox5.Font = new Font("Courier New", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            comboBox5.FormattingEnabled = true;
+            comboBox5.Location = new Point(296, 497);
+            comboBox5.Name = "comboBox5";
+            comboBox5.Size = new Size(231, 28);
+            comboBox5.TabIndex = 42;
+            // 
+            // label17
+            // 
+            label17.AutoSize = true;
+            label17.Font = new Font("Courier New", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label17.ForeColor = Color.Black;
+            label17.Location = new Point(537, 477);
+            label17.Name = "label17";
+            label17.Size = new Size(215, 17);
+            label17.TabIndex = 43;
+            label17.Text = "Выберите кол-во этажей:";
+            // 
+            // comboBox6
+            // 
+            comboBox6.Font = new Font("Courier New", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            comboBox6.FormattingEnabled = true;
+            comboBox6.Location = new Point(537, 497);
+            comboBox6.Name = "comboBox6";
+            comboBox6.Size = new Size(235, 28);
+            comboBox6.TabIndex = 44;
+            // 
+            // button15
+            // 
+            button15.Font = new Font("Courier New", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button15.ForeColor = Color.Black;
+            button15.Location = new Point(617, 411);
+            button15.Name = "button15";
+            button15.Size = new Size(149, 63);
+            button15.TabIndex = 45;
+            button15.Text = "Сложность";
+            button15.UseVisualStyleBackColor = true;
+            button15.Click += CalculateComplexityButton;
             // 
             // Object1
             // 
@@ -599,6 +678,12 @@ namespace CourseWork
             AutoSize = true;
             BackColor = SystemColors.GradientInactiveCaption;
             ClientSize = new Size(1158, 951);
+            Controls.Add(button15);
+            Controls.Add(comboBox6);
+            Controls.Add(label17);
+            Controls.Add(comboBox5);
+            Controls.Add(label16);
+            Controls.Add(button14);
             Controls.Add(button11);
             Controls.Add(button12);
             Controls.Add(label14);
@@ -606,6 +691,7 @@ namespace CourseWork
             Controls.Add(label13);
             Controls.Add(textBox8);
             Controls.Add(button13);
+            Controls.Add(button7);
             Controls.Add(panel2);
             Controls.Add(pictureBox1);
             Controls.Add(button10);
@@ -615,7 +701,6 @@ namespace CourseWork
             Controls.Add(textBox6);
             Controls.Add(label11);
             Controls.Add(button8);
-            Controls.Add(button7);
             Controls.Add(richTextBox3);
             Controls.Add(textBox7);
             Controls.Add(richTextBox2);
@@ -641,8 +726,8 @@ namespace CourseWork
             panel1.PerformLayout();
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
-            groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            groupBox2.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -654,20 +739,14 @@ namespace CourseWork
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Button Button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Button button4;
-        private TextBox textBox4;
         private Label label7;
         private Label label8;
         private TextBox textBox5;
@@ -697,6 +776,18 @@ namespace CourseWork
         private Label label13;
         private Label label15;
         private Label label14;
+        private Button button14;
+        private ComboBox comboBox3;
+        private ComboBox comboBox2;
+        private ComboBox comboBox1;
+        private ComboBox comboBox4;
+        private RichTextBox richTextBox1;
+        private GroupBox groupBox2;
+        private Label label16;
+        private ComboBox comboBox5;
+        private Label label17;
+        private ComboBox comboBox6;
+        private Button button15;
     }
 }
 
