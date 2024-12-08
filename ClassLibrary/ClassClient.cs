@@ -1,7 +1,6 @@
-﻿using System;
-using System.Drawing;
-using System.Windows.Forms;
+﻿using System.Drawing;
 using System.Runtime.Versioning;
+using System.Windows.Forms;
 
 namespace ClassLibrary
 {
@@ -29,7 +28,7 @@ namespace ClassLibrary
         }
 
         // Свойство для номера телефона
-        public string? Num
+        public new string? Num
         {
             get => num;
             set

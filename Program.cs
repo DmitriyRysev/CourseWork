@@ -1,3 +1,5 @@
+#pragma warning disable CA1416 // Проверка совместимости платформы
+
 namespace CourseWork
 {
     internal static class Program
@@ -15,3 +17,5 @@ namespace CourseWork
         }
     }
 }
+
+#pragma warning disable CA1416 // Проверка совместимости платформы

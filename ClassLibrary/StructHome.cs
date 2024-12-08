@@ -4,6 +4,8 @@ namespace ClassLibrary
 {
     public struct HomeProject
     {
+        public static int CurrentProjectNumber { get; set; }
+
         // Автоматические свойства  
         public int Projnum { get; set; }
         public DateTime ProjectDate { get; set; }   

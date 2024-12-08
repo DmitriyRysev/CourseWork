@@ -2,7 +2,7 @@
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace ClassLibrary 
+namespace ClassLibrary
 {
     public class Home : DesignCompanyClient
     {
@@ -92,13 +92,7 @@ namespace ClassLibrary
         public string? Num
         {
             get => num;
-            set
-            {
-                if (!string.IsNullOrEmpty(value) && value.Length == 11)
-                    num = value;
-                else
-                    num = "0";
-            }
+            set { num = value; }
         }
 
         //Реализация свойства DateOfBirth
