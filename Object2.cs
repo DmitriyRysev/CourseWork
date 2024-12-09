@@ -10,7 +10,6 @@ namespace CourseWork
         public Home home;
         public Company company;
         private AssignmentManager assignmentManager;
-
         private Form previousForm; // Ссылка на предыдущую форму
         private string numFromObject1;
         public Object2(Form previousForm, string num)
@@ -136,6 +135,7 @@ namespace CourseWork
             this.Hide();
         }
 
+        // Кнопка перехода к предыдущей форме
         private void BackButton(object sender, EventArgs e)
         {
             this.Hide();           // Скрываем текущую форму

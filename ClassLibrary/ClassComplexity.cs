@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ClassLibrary
+﻿namespace ClassLibrary
 {
     public class ComplexityInfo : IComplexity, IComplexity2
     {
@@ -23,9 +17,9 @@ namespace ClassLibrary
             double complexity = CalculateComplexity();
             return complexity switch
             {
-                < 80 => "Низкая сложность",
-                < 130 => "Средняя сложность",
-                _ => "Высокая сложность"
+                < 80 => "Низкая",
+                < 130 => "Средняя",
+                _ => "Высокая"
             };
         }
     }

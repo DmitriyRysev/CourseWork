@@ -19,7 +19,7 @@ namespace CourseWork
             this.StartPosition = FormStartPosition.Manual;
 
             // Указываем координаты для верхнего левого угла формы
-            this.Location = new Point(570, 200); // Например, немного левее и выше стандартного положения
+            this.Location = new Point(550, 200); // Например, немного левее и выше стандартного положения
 
             this.home = new Company();
             this.company = new Company();
@@ -132,7 +132,6 @@ namespace CourseWork
             }
         }
 
-
         // Кнопка очищения полей ввода
         private void clear_button(object sender, EventArgs e)
         {
@@ -220,7 +219,7 @@ namespace CourseWork
                 // Вывод данных в RichTextBox
                 richTextBox1.AppendText($"Площадь: {area} кв.м\n");
                 richTextBox1.AppendText($"Количество этажей: {floors}\n");
-                richTextBox1.AppendText($"Сложность: {complexityLevel} (Оценка: {complexity:F2})\n");
+                richTextBox1.AppendText($"Сложность: {complexityLevel}\n");
             }
             else
             {

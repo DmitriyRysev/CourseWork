@@ -9,7 +9,6 @@ namespace CourseWork
         public Home home;
         public Company company;
         private ProjectAction projectAction;
-
         private Form previousForm;
         private string nameFromObj;
 
@@ -46,7 +45,8 @@ namespace CourseWork
         private void OnProjectProcessed(object sender, ProjectEventArgs e)
         {
             richTextBox1.Clear();
-            string message = $"В {DateTime.Now:T} проект под номером {e.ProjectNumber} был добавлен в обработку.";
+            string message = $"Спасибо за ваш заказ! Проект под номером {e.ProjectNumber} " +
+                $"был успешно принят в работу в {DateTime.Now:T}.";
             richTextBox1.AppendText(message + Environment.NewLine);
         }
 
@@ -54,13 +54,10 @@ namespace CourseWork
         private void OnProjectRemoved(object sender, ProjectEventArgs e)
         {
             richTextBox1.Clear();
-            string message = $"В {DateTime.Now:T} проект под номером {e.ProjectNumber} был удалён из обработки.";
+            string message = $"Жаль, что вы отказались. Проект под номером {e.ProjectNumber} " +
+                $"был отменен в {DateTime.Now:T}. Мы будем рады помочь вам в будущем!";
             richTextBox1.AppendText(message + Environment.NewLine);
         }
-
-        private Font selectedFont = new Font("Courier New", 12);
-        private Color selectedColor = Color.Black;
-        private Client client = new Client();
 
         // Кнопка добавления проекта в обработку
         private void ProcessButton(object sender, EventArgs e)
@@ -89,6 +86,10 @@ namespace CourseWork
                 MessageBox.Show("Введите корректный номер проекта.", "Ошибка");
             }
         }
+
+        private Font selectedFont = new Font("Courier New", 12);
+        private Color selectedColor = Color.Black;
+        private Client client = new Client();
 
         // Кнопка выбора шрифта
         private void FontButton(object sender, EventArgs e)
@@ -127,6 +128,7 @@ namespace CourseWork
             client.NameText(pictureBox1, selectedFont, selectedColor);
         }
 
+        // Кнопка перехода к предыдущей форме
         private void BackButton(object sender, EventArgs e)
         {
             this.Hide();           // Скрываем текущую форму

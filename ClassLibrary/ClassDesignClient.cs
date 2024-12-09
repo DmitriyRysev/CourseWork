@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ClassLibrary
+﻿namespace ClassLibrary
 {
-    abstract public class DesignCompanyClient 
+    abstract public class DesignCompanyClient
     {
         // Абстрактное свойство Name с проверкой инициалов
         public abstract string Name { get; set; }

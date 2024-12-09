@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace ClassLibrary
+﻿namespace ClassLibrary
 {
     public struct HomeProject
     {
@@ -8,7 +6,7 @@ namespace ClassLibrary
 
         // Автоматические свойства  
         public int Projnum { get; set; }
-        public DateTime ProjectDate { get; set; }   
+        public DateTime ProjectDate { get; set; }
 
         // Явный конструктор с параметрами
         public HomeProject(int ProjNum, DateTime projectDate)
