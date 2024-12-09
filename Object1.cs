@@ -1,5 +1,7 @@
 using ClassLibrary;
 using System.Diagnostics;
+using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 #pragma warning disable CA1416 // Проверка совместимости платформы
 
@@ -49,6 +51,20 @@ namespace CourseWork
             string[] floorItems = { "1", "2", "3" };
             comboBox6.Items.AddRange(floorItems);
             comboBox6.Text = "Количество этажей";
+
+            string[] blueprint = { "Дом с балконом и гаражом", "Дом в стиле модерн с террасой", "Классический коттедж с мансардой" };
+            comboBox7.Items.AddRange(blueprint);
+            comboBox7.Text = "Чертежи";
+
+            string[] supplier = { "ООО 'ДомСтройКомплект'", "ООО 'Материалы 24/7'", "ООО 'Мир домов'", "ООО'ЭкоЖизнь'" };
+            comboBox8.Items.AddRange(supplier);
+            comboBox8.Text = "Поставщики";
+
+            string[] product = { "Двери", "Окна", "Крыши" };
+            comboBox9.Items.AddRange(product);
+            comboBox9.Text = "Продукт";
+
+
         }
         private void Form1_FormClosing(object? sender, FormClosingEventArgs e)
         {
@@ -175,13 +191,19 @@ namespace CourseWork
         private void new_proj_button(object sender, EventArgs e)
         {
             textBox5.Clear();
-            richTextBox1.Clear();
+            richTextBox1.Text = "Добро пожаловать в приложение для создания собственного дизайн-проекта " +
+                "вашего дома! Заполните поля и переходите к следующему шагу по нажатию кнопки 'Далее'!";
 
             // Сброс значений в ComboBox до начального состояния
             comboBox1.Text = "Выберите дверь";
             comboBox2.Text = "Выберите раму окна";
             comboBox3.Text = "Выберите вид крыши";
             comboBox4.Text = "Выберите тип проекта";
+            comboBox5.Text = "Площадь участка";
+            comboBox6.Text = "Количество этажей";
+            comboBox7.Text = "Чертежи";
+            comboBox8.Text = "Поставщики";
+            comboBox9.Text = "Продукт";
         }
 
         // Кнопка вычисления сложности проекта
@@ -240,6 +262,126 @@ namespace CourseWork
         {
             richTextBox1.AppendText($"Добро пожаловать в приложение для создания собственного дизайн-проекта вашего дома! " +
                 $"Заполните поля и переходите к следующему шагу по нажатию кнопки 'Далее'!");
+        }
+
+        private void BluePrintButton(object sender, EventArgs e)
+        {
+            // Проверяем корректность ввода данных
+            if (!int.TryParse(comboBox5.Text, out int area) || area <= 0)
+            {
+                MessageBox.Show("Пожалуйста, введите корректную площадь участка.", "Ошибка");
+                return;
+            }
+
+            if (!int.TryParse(comboBox6.Text, out int floors) || floors <= 0)
+            {
+                MessageBox.Show("Пожалуйста, введите корректное количество этажей.", "Ошибка");
+                return;
+            }
+
+            string description = comboBox7.Text;
+            if (description == "Чертежи")
+            {
+                MessageBox.Show("Пожалуйста, выберите или введите описание чертежа.", "Ошибка");
+                return;
+            }
+
+            // Создаем проект с чертежом
+            ProjectWithBlueprint project = new ProjectWithBlueprint(area, floors, description);
+
+            // Отображаем данные
+            richTextBox1.Clear();
+            richTextBox1.AppendText($"Проект:\n");
+            richTextBox1.AppendText($"- Площадь: {project.Area} кв.м\n");
+            richTextBox1.AppendText($"- Этажей: {project.Floors}\n");
+            richTextBox1.AppendText($"Чертеж:\n");
+            richTextBox1.AppendText($"- {project.Blueprint.Description}\n");
+        }
+
+        private void SupplierButton(object sender, EventArgs e)
+        {
+            // Проверяем корректность ввода данных
+            if (!int.TryParse(comboBox5.Text, out int area) || area <= 0)
+            {
+                MessageBox.Show("Пожалуйста, введите корректную площадь участка.", "Ошибка");
+                return;
+            }
+
+            if (!int.TryParse(comboBox6.Text, out int floors) || floors <= 0)
+            {
+                MessageBox.Show("Пожалуйста, введите корректное количество этажей.", "Ошибка");
+                return;
+            }
+
+            string supplierName = comboBox8.Text;
+            if (supplierName == "Поставщики")
+            {
+                MessageBox.Show("Пожалуйста, выберите имя поставщика.", "Ошибка");
+                return;
+            }
+
+            string product = comboBox9.Text;
+            if (product == "Продукт")
+            {
+                MessageBox.Show("Пожалуйста, выберите продукта.", "Ошибка");
+                return;
+            }
+
+            // Создаем проект с поставщиками
+            ProjectWithSuppliers project = new ProjectWithSuppliers { Area = area, Floors = floors };
+
+            // Создаем поставщика
+            Supplier supplier = new Supplier(supplierName, product);
+            project.AddSupplier(supplier);
+
+            // Отображаем данные
+            richTextBox1.Clear();
+            richTextBox1.AppendText($"Проект:\n");
+            richTextBox1.AppendText($"- Площадь: {project.Area} кв.м\n");
+            richTextBox1.AppendText($"- Этажей: {project.Floors}\n");
+            richTextBox1.AppendText($"Поставщик:\n");
+            richTextBox1.AppendText($"- Имя: {supplier.Name}\n");
+            richTextBox1.AppendText($"- Продукт: {supplier.Product}\n");
+        }
+
+        private void MaterialButton(object sender, EventArgs e)
+        {
+            // Создаем проект
+            ProjectWithMaterials project = new ProjectWithMaterials();
+
+            // Получаем выбранные материалы
+            string selectedDoor = comboBox1.Text;
+            string selectedWindow = comboBox2.Text;
+            string selectedRoof = comboBox3.Text;
+
+            // Находим материалы в каталоге
+            var doorMaterial = MaterialCatalog.FindMaterialByName(selectedDoor);
+            var windowMaterial = MaterialCatalog.FindMaterialByName(selectedWindow);
+            var roofMaterial = MaterialCatalog.FindMaterialByName(selectedRoof);
+
+            // Проверяем, что все материалы найдены
+            if (doorMaterial == null || windowMaterial == null || roofMaterial == null)
+            {
+                MessageBox.Show("Пожалуйста, выберите материалы.", "Ошибка");
+                return;
+            }
+
+            // Добавляем материалы в проект
+            project.AddMaterial(doorMaterial);
+            project.AddMaterial(windowMaterial);
+            project.AddMaterial(roofMaterial);
+
+            // Рассчитываем общую стоимость
+            double totalCost = project.GetTotalMaterialCost();
+
+            // Отображаем данные
+            richTextBox1.Clear();
+            richTextBox1.AppendText($"Проект: Площадь {comboBox5.Text} кв.м, Этажей {comboBox6.Text}\n");
+            richTextBox1.AppendText($"Материалы:\n");
+            richTextBox1.AppendText($"- Дверь: {doorMaterial.Name}, Стоимость: {doorMaterial.Cost}₽\n");
+            richTextBox1.AppendText($"- Окно: {windowMaterial.Name}, Стоимость: {windowMaterial.Cost}₽\n");
+            richTextBox1.AppendText($"- Крыша: {roofMaterial.Name}, Стоимость: {roofMaterial.Cost}₽\n");
+            richTextBox1.AppendText($"Общая стоимость материалов: {totalCost}₽\n");
         }
     }
 #pragma warning restore CA1416 // Проверка совместимости платформы
