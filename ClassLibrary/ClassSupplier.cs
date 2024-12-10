@@ -18,7 +18,7 @@
 
         public void AddSupplier(Supplier supplier)
         {
-            Suppliers.Add(supplier);
+            Suppliers.Add(supplier);  // Слабая связь: объект передается извне
         }
     }
 }

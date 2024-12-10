@@ -1,9 +1,17 @@
 ﻿namespace ClassLibrary
 {
-    public class Material
+    public class Material : ComplexityInfo, IComplexity, IComplexity2
     {
         public string Name { get; set; }
         public double Cost { get; set; }
+
+        public ComplexityInfo ComplexityInfo
+        {
+            get => default;
+            set
+            {
+            }
+        }
 
         public Material(string name, double cost)
         {
@@ -12,11 +20,13 @@
         }
     }
 
+
+
     public static class MaterialCatalog
     {
         public static readonly List<Material> Materials = new List<Material>
         {
-            new Material("Дуб", 5990),
+             new Material("Дуб", 5990),
             new Material("Береза", 3990),
             new Material("Ель", 2990),
             new Material("Дерево", 7990),

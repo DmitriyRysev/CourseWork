@@ -8,7 +8,7 @@
         // Реализация метода для расчета сложности
         public double CalculateComplexity()
         {
-            return Area * 0.5 + Floors * 2; // Пример формулы
+            return Area * 0.5 + Floors * 2;
         }
 
         // Реализация метода для определения уровня сложности

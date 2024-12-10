@@ -310,7 +310,7 @@
             Controls.Add(label11);
             Margin = new Padding(2);
             Name = "Object2";
-            Text = "Object2";
+            Text = "Дизайн компания";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ResumeLayout(false);

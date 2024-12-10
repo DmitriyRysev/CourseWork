@@ -12,13 +12,13 @@
 
     public class ProjectWithBlueprint : ComplexityInfo
     {
-        public Blueprint Blueprint { get; private set; }
+        public Blueprint Blueprint;
 
         public ProjectWithBlueprint(int area, int floors, string description)
         {
             Area = area;
             Floors = floors;
-            Blueprint = new Blueprint(description);
+            Blueprint = new Blueprint(description); // Полный контроль над объектом
         }
     }
 }

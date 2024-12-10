@@ -21,7 +21,7 @@ namespace CourseWork
             this.StartPosition = FormStartPosition.Manual;
 
             // Указываем координаты для верхнего левого угла формы
-            this.Location = new Point(550, 200); // Например, немного левее и выше стандартного положения
+            this.Location = new Point(250, 200); // Например, немного левее и выше стандартного положения
 
             this.home = new Company();
             this.company = new Company();
@@ -231,7 +231,6 @@ namespace CourseWork
                     richTextBox1.AppendText("Не удалось преобразовать объект в ComplexityInfo.\n");
                 }
 
-
                 // Получение данных из методов
                 double complexity = project.CalculateComplexity();
                 string complexityLevel = project.GetComplexityLevel();
@@ -241,7 +240,7 @@ namespace CourseWork
                 // Вывод данных в RichTextBox
                 richTextBox1.AppendText($"Площадь: {area} кв.м\n");
                 richTextBox1.AppendText($"Количество этажей: {floors}\n");
-                richTextBox1.AppendText($"Сложность: {complexityLevel}\n");
+                richTextBox1.AppendText($"Сложность выполнения: {complexityLevel}\n");
             }
             else
             {
