@@ -1,8 +1,19 @@
-﻿namespace ClassLibrary
+﻿// Композиция. Объект Blueprint создается внутри конструктора ProjectWithBlueprint, и его
+// жизненный цикл полностью зависит от жизненного цикла объекта ProjectWithBlueprint.
+
+// Если ProjectWithBlueprint будет удален, то и объект Blueprint будет удален вместе с ним.
+
+namespace ClassLibrary
 {
-    public class Blueprint
+    public class Blueprint : ComplexityInfo
     {
         public string Description { get; set; }
+
+        public ComplexityInfo? ComplexityInfo
+        {
+            get => default;
+            set { }
+        }
 
         public Blueprint(string description)
         {
@@ -20,5 +31,11 @@
             Floors = floors;
             Blueprint = new Blueprint(description); // Полный контроль над объектом
         }
+
+        //public Blueprint? Blueprint1
+        //{
+        //    get => default;
+        //    set { }
+        //}
     }
 }

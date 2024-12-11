@@ -1,11 +1,14 @@
-﻿namespace ClassLibrary
+﻿// Ассоциация. Material — это объекты, на которые ProjectWithMaterials ссылается. Жизненный цикл объектов Material
+// не зависит от ProjectWithMaterials. Материалы можно добавить или удалить, они могут использоваться где-либо еще.
+
+namespace ClassLibrary
 {
-    public class Material : ComplexityInfo, IComplexity, IComplexity2
+    public class Material : ComplexityInfo
     {
         public string Name { get; set; }
         public double Cost { get; set; }
 
-        public ComplexityInfo ComplexityInfo
+        public ComplexityInfo? ComplexityInfo
         {
             get => default;
             set
@@ -19,8 +22,6 @@
             Cost = cost;
         }
     }
-
-
 
     public static class MaterialCatalog
     {
@@ -45,7 +46,18 @@
 
     public class ProjectWithMaterials : ComplexityInfo
     {
-        public List<Material> Materials { get; private set; } = new List<Material>();
+        private readonly List<Material> Materials; // Связь с объектами материала.
+
+        public ProjectWithMaterials()
+        {
+            Materials = new List<Material>();
+        }
+
+        //public Material? Material
+        //{
+        //    get => default;
+        //    set { }
+        //}
 
         public void AddMaterial(Material material)
         {

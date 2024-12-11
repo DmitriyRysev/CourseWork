@@ -56,7 +56,7 @@ namespace CourseWork
             comboBox7.Items.AddRange(blueprint);
             comboBox7.Text = "Чертежи";
 
-            string[] supplier = { "ООО 'ДомСтройКомплект'", "ООО 'Материалы 24/7'", "ООО 'Мир домов'", "ООО'ЭкоЖизнь'" };
+            string[] supplier = { "ООО 'ДомСтройКомплект'", "ООО 'Материалы 24/7'", "ООО 'Мир домов'", "ООО 'ЭкоЖизнь'" };
             comboBox8.Items.AddRange(supplier);
             comboBox8.Text = "Поставщики";
 
@@ -138,7 +138,7 @@ namespace CourseWork
                 }
                 else if (home.Info == "Стандартный")
                 {
-                    richTextBox1.AppendText($"\nТип проекта: {home.Info}.Срок выполнения: 14 дней. Вы можете выбрать 'Премиальный' " +
+                    richTextBox1.AppendText($"\nТип проекта: {home.Info}. Срок выполнения: 14 дней. Вы можете выбрать 'Премиальный' " +
                         $"тип для сокращения срока до 7 дней.\nВаш номер телефона: {home.Num}\n");
                 }
 

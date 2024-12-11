@@ -1,9 +1,18 @@
-﻿namespace ClassLibrary
+﻿// Агрегация.Объекты Supplier создаются за пределами ProjectWithSuppliers и передаются через метод AddSupplier.
+// Жизненный цикл объектов Supplier не зависит от ProjectWithSuppliers. Они могут существовать независимо.
+
+namespace ClassLibrary
 {
-    public class Supplier
+    public class Supplier : ComplexityInfo
     {
         public string Name { get; set; }
         public string Product { get; set; }
+
+        public ComplexityInfo? ComplexityInfo
+        {
+            get => default;
+            set { }
+        }
 
         public Supplier(string name, string product)
         {
@@ -15,6 +24,12 @@
     public class ProjectWithSuppliers : ComplexityInfo
     {
         public List<Supplier> Suppliers { get; private set; } = new List<Supplier>();
+
+        //public Supplier? Supplier
+        //{
+        //    get => default;
+        //    set { }
+        //}
 
         public void AddSupplier(Supplier supplier)
         {

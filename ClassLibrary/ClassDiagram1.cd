@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="ClassLibrary.Company">
-    <Position X="9" Y="2.25" Width="1.5" />
+    <Position X="11.25" Y="2.5" Width="1.5" />
     <Compartments>
       <Compartment Name="Fields" Collapsed="true" />
       <Compartment Name="Properties" Collapsed="true" />
@@ -13,11 +13,11 @@
     </TypeIdentifier>
   </Class>
   <Class Name="ClassLibrary.Home">
-    <Position X="9" Y="4" Width="1.5" />
+    <Position X="11.25" Y="4.5" Width="1.5" />
     <Compartments>
-      <Compartment Name="Fields" Collapsed="true" />
       <Compartment Name="Properties" Collapsed="true" />
       <Compartment Name="Methods" Collapsed="true" />
+      <Compartment Name="Fields" Collapsed="true" />
     </Compartments>
     <TypeIdentifier>
       <HashCode>IAAAACAAAAAgAAAAAAAACAwAAAAUAAAIQAAAAEABQAA=</HashCode>
@@ -25,7 +25,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="ClassLibrary.Client">
-    <Position X="9" Y="0.5" Width="1.5" />
+    <Position X="11.25" Y="0.5" Width="1.5" />
     <Compartments>
       <Compartment Name="Fields" Collapsed="true" />
       <Compartment Name="Properties" Collapsed="true" />
@@ -37,7 +37,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="ClassLibrary.DesignCompanyClient">
-    <Position X="9" Y="5.75" Width="1.5" />
+    <Position X="11.25" Y="6.5" Width="1.5" />
     <Compartments>
       <Compartment Name="Properties" Collapsed="true" />
       <Compartment Name="Methods" Collapsed="true" />
@@ -48,7 +48,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="ClassLibrary.AssignmentManager">
-    <Position X="11.25" Y="0.5" Width="1.5" />
+    <Position X="13.5" Y="0.5" Width="1.5" />
     <Compartments>
       <Compartment Name="Fields" Collapsed="true" />
       <Compartment Name="Properties" Collapsed="true" />
@@ -60,7 +60,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="ClassLibrary.ProjectAction">
-    <Position X="11.25" Y="2.25" Width="1.5" />
+    <Position X="13.5" Y="2.25" Width="1.5" />
     <Compartments>
       <Compartment Name="Properties" Collapsed="true" />
       <Compartment Name="Methods" Collapsed="true" />
@@ -79,7 +79,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="ClassLibrary.ProjectEventArgs">
-    <Position X="11.25" Y="4.25" Width="1.5" />
+    <Position X="13.5" Y="4.25" Width="1.5" />
     <Compartments>
       <Compartment Name="Properties" Collapsed="true" />
       <Compartment Name="Methods" Collapsed="true" />
@@ -90,11 +90,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="ClassLibrary.ComplexityInfo">
-    <Position X="2.75" Y="2" Width="1.5" />
-    <Compartments>
-      <Compartment Name="Properties" Collapsed="true" />
-      <Compartment Name="Methods" Collapsed="true" />
-    </Compartments>
+    <Position X="4.75" Y="1.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAIAAAAAgAAAAAAAAAAIAAAAAAAAAAAQAAAAA=</HashCode>
       <FileName>ClassComplexity.cs</FileName>
@@ -102,29 +98,37 @@
     <Lollipop Position="0.717" />
   </Class>
   <Class Name="ClassLibrary.Blueprint">
-    <Position X="5" Y="6" Width="1.5" />
-    <Compartments>
-      <Compartment Name="Properties" Collapsed="true" />
-      <Compartment Name="Methods" Collapsed="true" />
-    </Compartments>
+    <Position X="1.25" Y="3" Width="1.5" />
+    <InheritanceLine Type="ClassLibrary.ComplexityInfo" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="4.75" Y="1.975" />
+        <Point X="1.875" Y="1.975" />
+        <Point X="1.875" Y="3" />
+      </Path>
+    </InheritanceLine>
+    <AssociationLine Name="ComplexityInfo" Type="ClassLibrary.ComplexityInfo" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="2.25" Y="3" />
+        <Point X="2.25" Y="2.438" />
+        <Point X="4.75" Y="2.438" />
+      </Path>
+    </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAgAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>ClassBluePrint.cs</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="ComplexityInfo" />
+    </ShowAsAssociation>
   </Class>
   <Class Name="ClassLibrary.ProjectWithBlueprint">
-    <Position X="5" Y="4.5" Width="1.5" />
-    <Compartments>
-      <Compartment Name="Properties" Collapsed="true" />
-      <Compartment Name="Methods" Collapsed="true" />
-      <Compartment Name="Fields" Collapsed="true" />
-    </Compartments>
-    <InheritanceLine Type="ClassLibrary.ComplexityInfo" ManuallyRouted="true" FixedToPoint="true">
+    <Position X="1.25" Y="5" Width="1.5" />
+    <InheritanceLine Type="ClassLibrary.ComplexityInfo" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
       <Path>
-        <Point X="3.5" Y="3.17" />
-        <Point X="3.5" Y="3.642" />
-        <Point X="5.312" Y="3.642" />
-        <Point X="5.312" Y="4.5" />
+        <Point X="4.75" Y="2.813" />
+        <Point X="3.125" Y="2.813" />
+        <Point X="3.125" Y="5.75" />
+        <Point X="2.75" Y="5.75" />
       </Path>
     </InheritanceLine>
     <TypeIdentifier>
@@ -132,29 +136,17 @@
       <FileName>ClassBluePrint.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="ClassLibrary.MaterialCatalog">
-    <Position X="0.75" Y="6" Width="1.5" />
-    <Compartments>
-      <Compartment Name="Fields" Collapsed="true" />
-      <Compartment Name="Methods" Collapsed="true" />
-    </Compartments>
-    <TypeIdentifier>
-      <HashCode>AEAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAA=</HashCode>
-      <FileName>ClassMaterial.cs</FileName>
-    </TypeIdentifier>
-  </Class>
   <Class Name="ClassLibrary.ProjectWithMaterials">
-    <Position X="0.75" Y="4.5" Width="1.5" />
+    <Position X="8" Y="5.25" Width="1.5" />
     <Compartments>
       <Compartment Name="Properties" Collapsed="true" />
-      <Compartment Name="Methods" Collapsed="true" />
     </Compartments>
-    <InheritanceLine Type="ClassLibrary.ComplexityInfo" ManuallyRouted="true" FixedToPoint="true">
+    <InheritanceLine Type="ClassLibrary.ComplexityInfo" ManuallyRouted="true">
       <Path>
-        <Point X="3.5" Y="3.17" />
-        <Point X="3.5" Y="3.629" />
-        <Point X="2" Y="3.629" />
-        <Point X="2" Y="4.5" />
+        <Point X="6.25" Y="2.812" />
+        <Point X="7.5" Y="2.812" />
+        <Point X="7.5" Y="6.062" />
+        <Point X="8" Y="6.062" />
       </Path>
     </InheritanceLine>
     <TypeIdentifier>
@@ -163,29 +155,51 @@
     </TypeIdentifier>
   </Class>
   <Class Name="ClassLibrary.Supplier">
-    <Position X="2.75" Y="6" Width="1.5" />
-    <Compartments>
-      <Compartment Name="Properties" Collapsed="true" />
-      <Compartment Name="Methods" Collapsed="true" />
-    </Compartments>
+    <Position X="3.5" Y="4.75" Width="1.5" />
+    <InheritanceLine Type="ClassLibrary.ComplexityInfo" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="5.375" Y="3.19" />
+        <Point X="5.375" Y="4.022" />
+        <Point X="4.625" Y="4.022" />
+        <Point X="4.625" Y="4.75" />
+      </Path>
+    </InheritanceLine>
+    <AssociationLine Name="ComplexityInfo" Type="ClassLibrary.ComplexityInfo" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="4.062" Y="4.75" />
+        <Point X="4.062" Y="3.565" />
+        <Point X="4.938" Y="3.565" />
+        <Point X="4.938" Y="3.19" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.15" Y="0.047" />
+      </MemberNameLabel>
+    </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AAACAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAQAAEAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>ClassSupplier.cs</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="ComplexityInfo" />
+    </ShowAsAssociation>
   </Class>
   <Class Name="ClassLibrary.ProjectWithSuppliers">
-    <Position X="2.75" Y="4.5" Width="1.5" />
-    <Compartments>
-      <Compartment Name="Properties" Collapsed="true" />
-      <Compartment Name="Methods" Collapsed="true" />
-    </Compartments>
+    <Position X="5.75" Y="4.75" Width="1.5" />
+    <InheritanceLine Type="ClassLibrary.ComplexityInfo" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="5.875" Y="3.19" />
+        <Point X="5.875" Y="4" />
+        <Point X="6.688" Y="4" />
+        <Point X="6.688" Y="4.75" />
+      </Path>
+    </InheritanceLine>
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAQAAA=</HashCode>
       <FileName>ClassSupplier.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ClassLibrary.ProjectData">
-    <Position X="11.25" Y="5.75" Width="1.5" />
+    <Position X="13.5" Y="5.75" Width="1.5" />
     <Compartments>
       <Compartment Name="Properties" Collapsed="true" />
     </Compartments>
@@ -195,21 +209,19 @@
     </TypeIdentifier>
   </Class>
   <Class Name="ClassLibrary.Material">
-    <Position X="5.5" Y="2" Width="1.5" />
-    <Compartments>
-      <Compartment Name="Properties" Collapsed="true" />
-      <Compartment Name="Methods" Collapsed="true" />
-    </Compartments>
-    <InheritanceLine Type="ClassLibrary.ComplexityInfo" FixedToPoint="true">
+    <Position X="8" Y="3" Width="1.5" />
+    <InheritanceLine Type="ClassLibrary.ComplexityInfo" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
       <Path>
-        <Point X="4.25" Y="2.812" />
-        <Point X="5.5" Y="2.812" />
+        <Point X="6.25" Y="1.871" />
+        <Point X="8.75" Y="1.871" />
+        <Point X="8.75" Y="3" />
       </Path>
     </InheritanceLine>
-    <AssociationLine Name="ComplexityInfo" Type="ClassLibrary.ComplexityInfo" FixedFromPoint="true">
+    <AssociationLine Name="ComplexityInfo" Type="ClassLibrary.ComplexityInfo" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
       <Path>
-        <Point X="5.5" Y="2.438" />
-        <Point X="4.25" Y="2.438" />
+        <Point X="8.375" Y="3" />
+        <Point X="8.375" Y="2.375" />
+        <Point X="6.25" Y="2.375" />
       </Path>
     </AssociationLine>
     <TypeIdentifier>
@@ -219,10 +231,9 @@
     <ShowAsAssociation>
       <Property Name="ComplexityInfo" />
     </ShowAsAssociation>
-    <Lollipop Position="0.2" />
   </Class>
   <Struct Name="ClassLibrary.HomeProject">
-    <Position X="13.5" Y="2.5" Width="1.5" />
+    <Position X="13.5" Y="7" Width="1.5" />
     <Compartments>
       <Compartment Name="Properties" Collapsed="true" />
       <Compartment Name="Methods" Collapsed="true" />
@@ -233,20 +244,14 @@
     </TypeIdentifier>
   </Struct>
   <Interface Name="ClassLibrary.IComplexity">
-    <Position X="0.5" Y="1" Width="1.5" />
-    <Compartments>
-      <Compartment Name="Methods" Collapsed="true" />
-    </Compartments>
+    <Position X="2.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Interface1.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="ClassLibrary.IComplexity2">
-    <Position X="0.5" Y="2.25" Width="1.5" />
-    <Compartments>
-      <Compartment Name="Methods" Collapsed="true" />
-    </Compartments>
+    <Position X="6.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Interface2.cs</FileName>
