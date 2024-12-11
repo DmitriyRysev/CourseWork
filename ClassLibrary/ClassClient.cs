@@ -16,14 +16,8 @@ namespace ClassLibrary
             get => string.IsNullOrEmpty(name) ? "Ошибка в инициалах" : name;
             set
             {
-                if (!string.IsNullOrEmpty(value) && value.Contains('.'))
-                {
-                    name = value;
-                }
-                else
-                {
-                    name = string.Empty;
-                }
+                if (!string.IsNullOrEmpty(value) && value.Contains('.')) { name = value; }
+                else { name = string.Empty; }
             }
         }
 
@@ -79,16 +73,6 @@ namespace ClassLibrary
             return $"Клиент: {Name}\n Дата рождения: {DateOfBirth.ToShortDateString()}";
         }
 
-        //// Метод NameText для отображения текста в RichTextBox с заданными шрифтом и цветом
-        //public void NameText(RichTextBox box, Font selectedFont, Color selectedColor)
-        //{
-        //    // Очищаем текст и добавляем строку с выбранным шрифтом и цветом
-        //    box.Clear();
-        //    box.SelectionFont = selectedFont;
-        //    box.SelectionColor = selectedColor;
-        //    box.AppendText(this.Name);
-        //}
-
         // Переопределение метода ToString
         public override string? ToString()
         {
@@ -97,21 +81,5 @@ namespace ClassLibrary
 
         // Свойство для даты рождения
         public override DateTime DateOfBirth { get; set; }
-
-        // Реализация метода NameText с отображением имени и телефона
-        //public void NameText(PictureBox box, FontDialog fontDialog, ColorDialog colorDialog)
-        //{
-
-        //    // Настройка выбора шрифта и цвета
-        //    if (fontDialog.ShowDialog() == DialogResult.OK && colorDialog.ShowDialog() == DialogResult.OK)
-        //    {
-        //        Graphics g = box.CreateGraphics();
-        //        using (Font font = fontDialog.Font)
-        //        using (Brush brush = new SolidBrush(colorDialog.Color))
-        //        {
-        //            g.DrawString(this.Name, font, brush, 1, 1);
-        //        }
-        //    }
-        //}
     }
 }

@@ -12,6 +12,11 @@ namespace CourseWork
         private AssignmentManager assignmentManager;
         private Form previousForm; // Ссылка на предыдущую форму
         private string numFromObject1;
+        //private string? DoorFromForm;
+        //private string? WinFromForm;
+        //private string? RoofFromForm;
+
+        //public Object2(Form previousForm, string num, string PhotoDoor, string PhotoWin, string PhotoRoof)
         public Object2(Form previousForm, string num)
         {
             InitializeComponent();
@@ -38,7 +43,11 @@ namespace CourseWork
             assignmentManager = new AssignmentManager(listBox1.Items, listBox2.Items);
 
             numFromObject1 = num;
+            //DoorFromForm = PhotoDoor;
+            //WinFromForm = PhotoWin;
+            //RoofFromForm = PhotoRoof;
         }
+
         private void Form1_FormClosing(object? sender, FormClosingEventArgs e)
         {
             // Завершаем все процессы, связанные с текущим приложением
@@ -130,7 +139,9 @@ namespace CourseWork
         private void NextButton(object sender, EventArgs e)
         {
             string clientName = textBox6.Text;
+
             Object3 thirdForm = new Object3(this, clientName);
+            //Object3 thirdForm = new Object3(this, clientName, DoorFromForm, WinFromForm, RoofFromForm);
             thirdForm.Show();
             this.Hide();
         }
@@ -143,5 +154,3 @@ namespace CourseWork
         }
     }
 }
-
-#pragma warning disable CA1416 // Проверка совместимости платформы

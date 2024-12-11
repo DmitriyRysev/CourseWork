@@ -37,14 +37,9 @@
             label3 = new Label();
             label4 = new Label();
             button2 = new Button();
-            button11 = new Button();
-            pictureBox1 = new PictureBox();
-            button10 = new Button();
-            button9 = new Button();
             richTextBox1 = new RichTextBox();
             button3 = new Button();
             panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -56,7 +51,7 @@
             panel1.Location = new Point(-6, -2);
             panel1.Margin = new Padding(2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(745, 83);
+            panel1.Size = new Size(704, 83);
             panel1.TabIndex = 62;
             // 
             // label1
@@ -66,7 +61,7 @@
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Courier New", 16F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.MediumBlue;
-            label1.Location = new Point(115, 26);
+            label1.Location = new Point(95, 26);
             label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
             label1.Size = new Size(526, 31);
@@ -90,7 +85,7 @@
             button1.ForeColor = Color.Black;
             button1.Location = new Point(176, 231);
             button1.Name = "button1";
-            button1.Size = new Size(159, 57);
+            button1.Size = new Size(159, 52);
             button1.TabIndex = 35;
             button1.Text = "Отменить заказ";
             button1.UseVisualStyleBackColor = true;
@@ -132,64 +127,18 @@
             button2.ForeColor = Color.Black;
             button2.Location = new Point(11, 231);
             button2.Name = "button2";
-            button2.Size = new Size(159, 57);
+            button2.Size = new Size(159, 52);
             button2.TabIndex = 34;
             button2.Text = "Оформить заказ";
             button2.UseVisualStyleBackColor = true;
             button2.Click += ProcessButton;
             // 
-            // button11
-            // 
-            button11.Font = new Font("Courier New", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button11.ForeColor = Color.Black;
-            button11.Location = new Point(350, 360);
-            button11.Name = "button11";
-            button11.Size = new Size(367, 57);
-            button11.TabIndex = 65;
-            button11.Text = "Вывод";
-            button11.UseVisualStyleBackColor = true;
-            button11.Click += DisplayButton;
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.BackColor = SystemColors.Window;
-            pictureBox1.Image = Properties.Resources.шрифт2;
-            pictureBox1.Location = new Point(351, 92);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(366, 199);
-            pictureBox1.TabIndex = 66;
-            pictureBox1.TabStop = false;
-            // 
-            // button10
-            // 
-            button10.Font = new Font("Courier New", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button10.ForeColor = Color.Black;
-            button10.Location = new Point(537, 297);
-            button10.Name = "button10";
-            button10.Size = new Size(181, 57);
-            button10.TabIndex = 64;
-            button10.Text = "Цвет";
-            button10.UseVisualStyleBackColor = true;
-            button10.Click += ColorButton;
-            // 
-            // button9
-            // 
-            button9.Font = new Font("Courier New", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button9.ForeColor = Color.Black;
-            button9.Location = new Point(350, 297);
-            button9.Name = "button9";
-            button9.Size = new Size(181, 57);
-            button9.TabIndex = 63;
-            button9.Text = "Шрифт";
-            button9.UseVisualStyleBackColor = true;
-            button9.Click += FontButton;
-            // 
             // richTextBox1
             // 
             richTextBox1.Font = new Font("Courier New", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            richTextBox1.Location = new Point(11, 297);
+            richTextBox1.Location = new Point(354, 92);
             richTextBox1.Name = "richTextBox1";
-            richTextBox1.Size = new Size(324, 183);
+            richTextBox1.Size = new Size(327, 249);
             richTextBox1.TabIndex = 2;
             richTextBox1.Text = "";
             // 
@@ -197,10 +146,10 @@
             // 
             button3.Font = new Font("Courier New", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button3.ForeColor = Color.Black;
-            button3.Location = new Point(350, 423);
+            button3.Location = new Point(11, 289);
             button3.Name = "button3";
-            button3.Size = new Size(368, 57);
-            button3.TabIndex = 67;
+            button3.Size = new Size(324, 52);
+            button3.TabIndex = 63;
             button3.Text = "Назад";
             button3.UseVisualStyleBackColor = true;
             button3.Click += BackButton;
@@ -210,13 +159,9 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.GradientInactiveCaption;
-            ClientSize = new Size(732, 494);
+            ClientSize = new Size(695, 355);
             Controls.Add(button3);
             Controls.Add(richTextBox1);
-            Controls.Add(button11);
-            Controls.Add(pictureBox1);
-            Controls.Add(button10);
-            Controls.Add(button9);
             Controls.Add(panel1);
             Controls.Add(label2);
             Controls.Add(button1);
@@ -229,7 +174,6 @@
             Load += Object3_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -244,10 +188,6 @@
         private Label label3;
         private Label label4;
         private Button button2;
-        private Button button11;
-        private PictureBox pictureBox1;
-        private Button button10;
-        private Button button9;
         private RichTextBox richTextBox1;
         private Button button3;
     }

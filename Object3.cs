@@ -1,5 +1,6 @@
 ﻿using ClassLibrary;
 using System.Diagnostics;
+
 #pragma warning disable CA1416 // Проверка совместимости платформы
 
 namespace CourseWork
@@ -11,7 +12,11 @@ namespace CourseWork
         private ProjectAction projectAction;
         private Form previousForm;
         private string nameFromObj;
+        //private string? DoorFromForm;
+        //private string? WinFromForm;
+        //private string? RoofFromForm;
 
+        //public Object3(Form previousForm, string clientName, string? door, string? win, string? roof)
         public Object3(Form previousForm, string clientName)
         {
             InitializeComponent();
@@ -21,7 +26,7 @@ namespace CourseWork
             this.StartPosition = FormStartPosition.Manual;
 
             // Указываем координаты для верхнего левого угла формы
-            this.Location = new Point(560, 200);
+            this.Location = new Point(600, 300);
 
             this.previousForm = previousForm; // Сохраняем ссылку на предыдущую форму
 
@@ -34,7 +39,12 @@ namespace CourseWork
             projectAction.RemoveHandler += OnProjectRemoved;
 
             nameFromObj = clientName;
+            this.previousForm = previousForm;
+            //this.DoorFromForm = door;
+            //this.WinFromForm = win;
+            //this.RoofFromForm = roof;
         }
+
         private void Form1_FormClosing(object? sender, FormClosingEventArgs e)
         {
             // Завершаем все процессы, связанные с текущим приложением
@@ -87,47 +97,6 @@ namespace CourseWork
             }
         }
 
-        private Font selectedFont = new Font("Courier New", 12);
-        private Color selectedColor = Color.Black;
-        private Client client = new Client();
-
-        // Кнопка выбора шрифта
-        private void FontButton(object sender, EventArgs e)
-        {
-            using (FontDialog fontDialog = new FontDialog())
-            {
-                if (fontDialog.ShowDialog() == DialogResult.OK)
-                {
-                    selectedFont = fontDialog.Font;
-                }
-            }
-        }
-
-        // Кнопка выбора цвета шрифта
-        private void ColorButton(object sender, EventArgs e)
-        {
-            using (ColorDialog colorDialog = new ColorDialog())
-            {
-                if (colorDialog.ShowDialog() == DialogResult.OK)
-                {
-                    selectedColor = colorDialog.Color;
-                }
-            }
-        }
-
-        // Кнопка вывода на экран
-        private void DisplayButton(object sender, EventArgs e)
-        {
-            // Убираем фоновое изображение с PictureBox
-            pictureBox1.BackgroundImage = null;
-
-            // Обновляем данные клиента из TextBox
-            client.Name = nameFromObj;  // ФИО из TextBox6
-
-            // Передаем PictureBox, FontDialog и ColorDialog в метод NameText
-            client.NameText(pictureBox1, selectedFont, selectedColor);
-        }
-
         // Кнопка перехода к предыдущей форме
         private void BackButton(object sender, EventArgs e)
         {
@@ -141,5 +110,3 @@ namespace CourseWork
         }
     }
 }
-
-#pragma warning disable CA1416 // Проверка совместимости платформы

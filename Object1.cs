@@ -1,7 +1,5 @@
 using ClassLibrary;
 using System.Diagnostics;
-using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 #pragma warning disable CA1416 // Проверка совместимости платформы
 
@@ -21,7 +19,7 @@ namespace CourseWork
             this.StartPosition = FormStartPosition.Manual;
 
             // Указываем координаты для верхнего левого угла формы
-            this.Location = new Point(250, 200); // Например, немного левее и выше стандартного положения
+            this.Location = new Point(350, 200); // Например, немного левее и выше стандартного положения
 
             this.home = new Company();
             this.company = new Company();
@@ -126,10 +124,10 @@ namespace CourseWork
                 HomeProject project = new HomeProject(ProjNum, dateTimePicker1.Value.AddDays(daysToAdd));
 
                 richTextBox1.Clear();
-                // Выводим выбранные материалы
-                richTextBox1.AppendText($"Вы выбрали двери из материала '{home.door}'\n");
-                richTextBox1.AppendText($"Вы выбрали окна из материала '{home.window}'\n");
-                richTextBox1.AppendText($"Вы выбрали крышу из материала '{home.roof}'\n");
+                richTextBox1.AppendText($"Выбранные материалы:\n" +
+                    $"- Двери: {home.door}\n" +
+                    $"- Окна: {home.window}\n" +
+                    $"- Крыша: {home.roof}\n");
 
                 // Выводим информацию о типе проекта и сроках ожидания
                 if (home.Info == "Премиальный")
@@ -244,7 +242,7 @@ namespace CourseWork
             }
             else
             {
-                MessageBox.Show("Пожалуйста, введите корректные данные.", "Ошибка");
+                MessageBox.Show("Пожалуйста, выберите площадь участка и количество этажей.", "Ошибка");
             }
         }
 
@@ -252,7 +250,12 @@ namespace CourseWork
         private void NextButton(object sender, EventArgs e)
         {
             string num = textBox5.Text; // Получаем номер телефона из TextBox5
+            //string PhotoDoor = comboBox1.Text;
+            //string PhotoWin = comboBox2.Text;
+            //string PhotoRoof = comboBox3.Text;
+
             Object2 secondForm = new Object2(this, num);
+            //Object2 secondForm = new Object2(this, num, PhotoDoor, PhotoWin, PhotoRoof);
             secondForm.Show();
             this.Hide();
         }
@@ -263,6 +266,7 @@ namespace CourseWork
                 $"Заполните поля и переходите к следующему шагу по нажатию кнопки 'Далее'!");
         }
 
+        // Кнопка вывода описания чертежа
         private void BluePrintButton(object sender, EventArgs e)
         {
             // Проверяем корректность ввода данных
@@ -297,6 +301,7 @@ namespace CourseWork
             richTextBox1.AppendText($"- {project.Blueprint.Description}\n");
         }
 
+        // Кнопка вывода информации о поставщике
         private void SupplierButton(object sender, EventArgs e)
         {
             // Проверяем корректность ввода данных
@@ -343,6 +348,7 @@ namespace CourseWork
             richTextBox1.AppendText($"- Продукт: {supplier.Product}\n");
         }
 
+        // Кнопка стоимости материалов
         private void MaterialButton(object sender, EventArgs e)
         {
             // Создаем проект
@@ -383,5 +389,4 @@ namespace CourseWork
             richTextBox1.AppendText($"Общая стоимость материалов: {totalCost}₽\n");
         }
     }
-#pragma warning restore CA1416 // Проверка совместимости платформы
 }
